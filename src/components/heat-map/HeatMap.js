@@ -7,27 +7,22 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 37.774546,
-  lng: -122.433523,
+  lat: 39.8097343,
+  lng: -98.5556199,
 };
 
 function HeatMap() {
-  const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-  }, []);
+  const onLoad = React.useCallback((map) => {
+    map.setCenter(center);
+    map.setZoom(5);
+  });
 
   return (
     <LoadScript
       libraries={['visualization']}
       googleMapsApiKey="AIzaSyDGPAOkljsjapYWRKo89y6McxkZ3JzwZKI"
     >
-      <GoogleMap
-        onLoad={onLoad}
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-      >
+      <GoogleMap onLoad={onLoad} mapContainerStyle={containerStyle}>
         <HeatmapLayer
           data={
             [
