@@ -1,7 +1,7 @@
 /* global google */
 import React from 'react';
 import { HeatmapLayer } from '@react-google-maps/api';
-import useLocation from './hooks/getLocations';
+import useLocation from '../../hooks/getLocations';
 
 const options = {
   dissipating: false,
