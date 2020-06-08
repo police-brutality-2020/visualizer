@@ -1,13 +1,13 @@
 import React from 'react';
 import Map from './components/map/map';
-import Search from './components/search/search';
+import SearchBox from './components/search/search-box';
 
 import './App.css';
 
 function App() {
   return (
     <div>
-      <Search />
+      <SearchBox />
       <Map />
     </div>
   );

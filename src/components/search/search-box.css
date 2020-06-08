@@ -1,10 +1,4 @@
-.search {
-    position: absolute;
-    left: 0;
-    z-index: 1;
-}
-
-.search-bar {
+.search-box {
     display: flex;
     flex-direction: row;
 
@@ -17,7 +11,7 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
 }
 
-.search-bar input {
+.search-box input {
     flex: 1;
 
     border: none;
