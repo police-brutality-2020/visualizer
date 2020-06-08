@@ -1,0 +1,16 @@
+.search {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
+.search-bar {
+    width: 392px;
+    height: 48px;
+
+    margin: 8px;
+
+    border-radius: 8px;;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
+}

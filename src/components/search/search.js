@@ -1,7 +1,13 @@
 import React from 'react';
 
+import './search.css';
+
 function Search() {
-  return <div id="search" />;
+  return (
+    <div className="search">
+      <div className="search-bar" />
+    </div>
+  );
 }
 
 export default Search;
