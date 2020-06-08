@@ -1,0 +1,17 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-undef": 2,
+    "prettier/prettier": 2,
+    "react/jsx-closing-bracket-location": 2,
+    "react/jsx-closing-tag-location": 2,
+    "react/jsx-indent": [2, 2],
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }]
+  }
+}
