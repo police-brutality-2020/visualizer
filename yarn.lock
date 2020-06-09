@@ -1299,26 +1299,26 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@react-google-maps/api@^2.0.0-alpha":
-  version "2.0.0-alpha"
-  resolved "https://registry.yarnpkg.com/@react-google-maps/api/-/api-2.0.0-alpha.tgz#0f65bda24ac58af42cffebdbeba2b57c9ab425af"
-  integrity sha512-cqvk5gYdsyD7hKCyj/N7xrl8lvXw64NpFh7VmgclNW7fxzOwwDd49Qtr+jsD+x8ELQ3/IIzsH37ebBxKnuYMrg==
+"@react-google-maps/api@^1.9.5":
+  version "1.9.5"
+  resolved "https://registry.yarnpkg.com/@react-google-maps/api/-/api-1.9.5.tgz#5b99d7397cdbb6c48c16623d63592df9a6cfffde"
+  integrity sha512-DB8Zv+ADwhHdulwec7k9yoMqpgK2VnaGD//rlZSUsDj1gafECFgxOEMcmjPSCDfFCSvX6qr5VVZJqBvrlpkm3Q==
   dependencies:
-    "@react-google-maps/infobox" "2.0.0-alpha"
-    "@react-google-maps/marker-clusterer" "2.0.0-alpha"
-    acorn "7.2.0"
-    acorn-jsx "5.2.0"
+    "@react-google-maps/infobox" "1.9.3"
+    "@react-google-maps/marker-clusterer" "1.9.3"
+    acorn "^7.2.0"
+    acorn-jsx "^5.2.0"
     invariant "2.2.4"
 
-"@react-google-maps/infobox@2.0.0-alpha":
-  version "2.0.0-alpha"
-  resolved "https://registry.yarnpkg.com/@react-google-maps/infobox/-/infobox-2.0.0-alpha.tgz#d9fb7b1f091466460e5cc7a3a2c9de4c4b831a3c"
-  integrity sha512-QOHyH1OfFvubpNB8/U4VSUcOVizIdo4R9jfQBN3klzV8T2h0JA3SQ9bi4isBHSINssvBc7rhAdz0PKe19fkc/w==
+"@react-google-maps/infobox@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/@react-google-maps/infobox/-/infobox-1.9.3.tgz#90a32d57527f5f0476f2fcb41556016b650cc4a3"
+  integrity sha512-e2EoeS+VSBsU4Gol3m3eaj9n1UGmp4Sz1ORpYHq0TJI2zRNwS7C2rGLe4aT0tHMXcaPSfkPR811IKtmc54ItUQ==
 
-"@react-google-maps/marker-clusterer@2.0.0-alpha":
-  version "2.0.0-alpha"
-  resolved "https://registry.yarnpkg.com/@react-google-maps/marker-clusterer/-/marker-clusterer-2.0.0-alpha.tgz#4e55f1ab664a12a227104dc17b999c1cca5d99a3"
-  integrity sha512-SiDkSBQp5YPcbWGnLMNEzqJuhKP1u455o4h1MnqDLNsuEMjCT/Z8BdgpV+tuFFf4fDOpd5PeD3gEVwtPkcoH8A==
+"@react-google-maps/marker-clusterer@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/@react-google-maps/marker-clusterer/-/marker-clusterer-1.9.3.tgz#6acb6a12cffeef04f11549aaf0a43e6135578116"
+  integrity sha512-fJoNmtHewep2wM4PnCtpPn3wImUPHBhCyz0YqOx1AxRg8zOwCOauPSMon3xKtGP7m5AmrAZpiYY51vBkubH/aA==
 
 "@sheerun/mutationobserver-shim@^0.3.2":
   version "0.3.3"
@@ -1864,7 +1864,7 @@ acorn-globals@^4.1.0, acorn-globals@^4.3.0:
     acorn "^6.0.1"
     acorn-walk "^6.0.1"
 
-acorn-jsx@5.2.0, acorn-jsx@^5.2.0:
+acorn-jsx@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.2.0.tgz#4c66069173d6fdd68ed85239fc256226182b2ebe"
   integrity sha512-HiUX/+K2YpkpJ+SzBffkM/AQ2YE03S0U1kjTLVpoJdhZMOWy8qvXVN9JdLqv2QsaQ6MPYQIuNmwD8zOiYUofLQ==
@@ -1873,11 +1873,6 @@ acorn-walk@^6.0.1:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-6.2.0.tgz#123cb8f3b84c2171f1f7fb252615b1c78a6b1a8c"
   integrity sha512-7evsyfH1cLOCdAzZAd43Cic04yKydNx0cF+7tiA19p1XnLLPU4dpCQOqpjqwokFe//vS0QqfqqjCS2JkiIs0cA==
-
-acorn@7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.2.0.tgz#17ea7e40d7c8640ff54a694c889c26f31704effe"
-  integrity sha512-apwXVmYVpQ34m/i71vrApRrRKCWQnZZF1+npOD0WV5xZFfwWOmKGQ2RWlfdy9vWITsenisM8M0Qeq8agcFHNiQ==
 
 acorn@^5.5.3:
   version "5.7.4"
@@ -1893,6 +1888,11 @@ acorn@^7.1.1:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.1.1.tgz#e35668de0b402f359de515c5482a1ab9f89a69bf"
   integrity sha512-add7dgA5ppRPxCFJoAGfMDi7PIBXq1RtGo7BhbLaxwrXPOmw8gq48Y9ozT01hUKy9byMjlR20EJhu5zlkErEkg==
+
+acorn@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.2.0.tgz#17ea7e40d7c8640ff54a694c889c26f31704effe"
+  integrity sha512-apwXVmYVpQ34m/i71vrApRrRKCWQnZZF1+npOD0WV5xZFfwWOmKGQ2RWlfdy9vWITsenisM8M0Qeq8agcFHNiQ==
 
 address@1.1.2, address@^1.0.1:
   version "1.1.2"

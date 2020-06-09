@@ -18,12 +18,20 @@ const options = {
 };
 
 function Map() {
+  function handleMapClick(e) {
+    console.log('coordinates', e.latLng.lat(), e.latLng.lng());
+  }
+
   return (
     <LoadScript
       libraries={['visualization']}
       googleMapsApiKey="AIzaSyDGPAOkljsjapYWRKo89y6McxkZ3JzwZKI"
     >
-      <GoogleMap mapContainerStyle={containerStyle} options={options}>
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        options={options}
+        onClick={handleMapClick}
+      >
         <HeatLayer />
       </GoogleMap>
     </LoadScript>
