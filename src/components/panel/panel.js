@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import ResultDetails from './result-details';
-import SearchResults from './search-results';
+import ResultDetails from '../result-details/result-details';
+import SearchResults from '../search-results/search-results';
 
 import './panel.css';
 
