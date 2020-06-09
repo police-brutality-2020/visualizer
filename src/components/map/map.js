@@ -12,8 +12,17 @@ const options = {
     lat: 38,
     lng: -98,
   },
+  restriction: {
+    latLngBounds: {
+      north: 52,
+      south: 22,
+      west: -136,
+      east: -60,
+    },
+  },
   zoom: 5,
   mapTypeControl: false,
+  fullscreenControl: false,
   streetViewControl: false,
 };
 
