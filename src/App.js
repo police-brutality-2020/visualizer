@@ -7,8 +7,8 @@ import useLocations from './hooks/getLocations';
 import './App.css';
 
 function App() {
-  const [search, setSearch] = React.useState(null);
-  const handleClear = () => setSearch(null);
+  const [search, setSearch] = React.useState('');
+  const handleClear = () => setSearch('');
 
   const data = useLocations();
   if (!data) return null;
@@ -18,7 +18,12 @@ function App() {
 
   return (
     <div className="app">
-      <Omnibox onClear={handleClear} onSearch={setSearch} />
+      <Omnibox
+        key={search}
+        defaultInput={search}
+        onClear={handleClear}
+        onSearch={setSearch}
+      />
       <Panel data={results} isOpen={isOpen} />
       <Map data={data} onCityClick={setSearch} />
     </div>

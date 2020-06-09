@@ -4,8 +4,8 @@ import { MdSearch, MdClear } from 'react-icons/md';
 
 import './omnibox.css';
 
-function Omnibox({ onClear, onSearch }) {
-  const [input, setInput] = React.useState('');
+function Omnibox({ defaultInput, onClear, onSearch }) {
+  const [input, setInput] = React.useState(defaultInput);
 
   const handleChange = (e) => setInput(e.target.value);
 
@@ -37,11 +37,13 @@ function Omnibox({ onClear, onSearch }) {
 }
 
 Omnibox.propTypes = {
+  defaultInput: PropTypes.string,
   onClear: PropTypes.func,
   onSearch: PropTypes.func,
 };
 
 Omnibox.defaultProps = {
+  defaultInput: '',
   onClear: () => {},
   onSearch: () => {},
 };
