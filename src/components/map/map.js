@@ -3,7 +3,7 @@ import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import HeatLayer from './heat-layer';
 
 const containerStyle = {
-  width: '100%',
+  flex: '1',
   height: '100vh',
 };
 
