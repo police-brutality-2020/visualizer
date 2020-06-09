@@ -1,21 +1,19 @@
 import React from 'react';
-import SearchBox from './search-box';
+import PropTypes from 'prop-types';
 import SearchResults from './search-results';
 
 import './panel.css';
 
-function Panel() {
-  const [isOpen, setOpen] = React.useState(false);
-
-  const handleClear = () => setOpen(false);
-  const handleSearch = () => setOpen(true);
-
+function Panel({ isOpen }) {
   return (
     <div className={`panel ${isOpen ? 'open' : ''}`}>
-      <SearchBox onClear={handleClear} onSearch={handleSearch} />
       <SearchResults />
     </div>
   );
 }
+
+Panel.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+};
 
 export default Panel;

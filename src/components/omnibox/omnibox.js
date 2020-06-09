@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MdSearch, MdClear } from 'react-icons/md';
 
-import './search-box.css';
+import './omnibox.css';
 
-function SearchBox({ onClear, onSearch }) {
+function Omnibox({ onClear, onSearch }) {
   const [input, setInput] = React.useState('');
 
   const handleChange = (e) => setInput(e.target.value);
@@ -20,31 +20,30 @@ function SearchBox({ onClear, onSearch }) {
   };
 
   return (
-    <div className="search-box">
+    <div className="omnibox">
       <form onSubmit={handleSubmit}>
         <input
-          className="search-input"
           type="text"
           value={input}
           placeholder="Search Police Brutality"
           onChange={handleChange}
         />
-        <MdSearch className="search-icon divider" onClick={handleSubmit} />
-        <div className="search-divider" />
-        <MdClear className="search-icon" onClick={handleClear} />
+        <MdSearch className="icon" onClick={handleSubmit} />
+        <div className="divider" />
+        <MdClear className="icon" onClick={handleClear} />
       </form>
     </div>
   );
 }
 
-SearchBox.propTypes = {
+Omnibox.propTypes = {
   onClear: PropTypes.func,
   onSearch: PropTypes.func,
 };
 
-SearchBox.defaultProps = {
+Omnibox.defaultProps = {
   onClear: () => {},
   onSearch: () => {},
 };
 
-export default SearchBox;
+export default Omnibox;
