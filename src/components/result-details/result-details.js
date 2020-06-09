@@ -17,6 +17,7 @@ function ResultDetails() {
         Police shoot tear gas canister at man from close range, striking him in
         the chest
       </h3>
+      <p>Bentonville, Arkansas &bull; June 9th, 2020</p>
       <div className="divider" />
       <Links urls={urls} />
       <div className="divider" />
