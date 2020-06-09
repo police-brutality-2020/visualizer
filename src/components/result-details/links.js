@@ -4,11 +4,19 @@ import { FaLink } from 'react-icons/fa';
 
 import './links.css';
 
+const getIcon = (url) => {
+  const link = new URL(url);
+  console.dir(link);
+  return <FaLink />;
+};
+
+const getLabel = () => '@username1';
+
 function Links({ urls }) {
   const elements = urls.map((url) => (
-    <a href={url} target="_blank" rel="noreferrer">
-      <FaLink />
-      <span>@username1</span>
+    <a key={url} href={url} target="_blank" rel="noopener noreferrer">
+      {getIcon(url)}
+      <span>{getLabel(url)}</span>
     </a>
   ));
 
