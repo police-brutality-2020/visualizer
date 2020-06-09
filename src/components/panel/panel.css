@@ -1,4 +1,7 @@
 .panel {
+  display: flex;
+  flex-direction: column;
+  
   width: 408px;
   height: 100vh;
 
