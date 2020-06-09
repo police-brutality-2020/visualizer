@@ -14,3 +14,7 @@
 .panel:not(.open) {
   display: none;
 }
+
+.panel .omnibox-spacer {
+  flex: 1 0 64px;
+}

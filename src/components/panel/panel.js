@@ -7,6 +7,7 @@ import './panel.css';
 function Panel({ isOpen }) {
   return (
     <div className={`panel ${isOpen ? 'open' : ''}`}>
+      <div className="omnibox-spacer" />
       <SearchResults />
     </div>
   );
