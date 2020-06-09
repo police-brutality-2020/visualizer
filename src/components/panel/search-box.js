@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MdSearch } from 'react-icons/md';
+import { MdSearch, MdClear } from 'react-icons/md';
 
 import './search-box.css';
 
@@ -24,7 +24,9 @@ function SearchBox({ onSearch }) {
           placeholder="Search Police Brutality"
           onChange={handleChange}
         />
-        <MdSearch className="search-icon" />
+        <MdSearch className="search-icon divider" onClick={handleSubmit} />
+        <div className="search-divider" />
+        <MdClear className="search-icon" />
       </form>
     </div>
   );
