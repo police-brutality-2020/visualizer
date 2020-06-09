@@ -5,7 +5,7 @@ import SearchResults from '../search-results/search-results';
 
 import './panel.css';
 
-function Panel({ isOpen }) {
+function Panel({ data, isOpen }) {
   const [showDetails, setShowDetails] = React.useState(false);
 
   // TODO: Pass up an incident ID or some other relevant data to show details for
@@ -17,13 +17,14 @@ function Panel({ isOpen }) {
       {showDetails ? (
         <ResultDetails />
       ) : (
-        <SearchResults onResultClick={handleResultClick} />
+        <SearchResults data={data} onResultClick={handleResultClick} />
       )}
     </div>
   );
 }
 
 Panel.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
   isOpen: PropTypes.bool.isRequired,
 };
 

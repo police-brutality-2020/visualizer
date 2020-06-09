@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './search-result.css';
 
-function SearchResult({ title, location, date, onClick }) {
+function SearchResult({ title, city, state, date, onClick }) {
   return (
     <div
       className="search-result"
@@ -14,7 +14,7 @@ function SearchResult({ title, location, date, onClick }) {
     >
       <h4>{title}</h4>
       <p>
-        {location} &bull; {date}
+        {city}, {state} &bull; {date}
       </p>
     </div>
   );
@@ -22,7 +22,8 @@ function SearchResult({ title, location, date, onClick }) {
 
 SearchResult.propTypes = {
   title: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  state: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };

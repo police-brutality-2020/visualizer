@@ -7,18 +7,20 @@ import useLocations from './hooks/getLocations';
 import './App.css';
 
 function App() {
-  const [isOpen, setOpen] = React.useState(false);
-  const handleClear = () => setOpen(false);
-  const handleSearch = () => setOpen(true);
+  const [search, setSearch] = React.useState(null);
+  const handleClear = () => setSearch(null);
 
   const data = useLocations();
   if (!data) return null;
 
+  const isOpen = !!search;
+  const results = data.filter((item) => item.city === search);
+
   return (
     <div className="app">
-      <Omnibox onClear={handleClear} onSearch={handleSearch} />
-      <Panel isOpen={isOpen} />
-      <Map data={data} />
+      <Omnibox onClear={handleClear} onSearch={setSearch} />
+      <Panel data={results} isOpen={isOpen} />
+      <Map data={data} onCityClick={setSearch} />
     </div>
   );
 }
