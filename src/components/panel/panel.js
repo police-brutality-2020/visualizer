@@ -5,9 +5,13 @@ import SearchResults from './search-results';
 import './panel.css';
 
 function Panel() {
+  const [isOpen, setOpen] = React.useState(false);
+
+  const handleSearch = () => setOpen(true);
+
   return (
-    <div className="panel">
-      <SearchBox />
+    <div className={`panel ${isOpen ? 'open' : ''}`}>
+      <SearchBox onSearch={handleSearch} />
       <SearchResults />
     </div>
   );
