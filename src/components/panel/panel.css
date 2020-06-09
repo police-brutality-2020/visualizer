@@ -1,15 +1,16 @@
 .panel {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  z-index: 1;
-}
-
-.panel.open {
-  position: relative;
   height: 100vh;
 
   background-color: #ffffff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+  z-index: 1;
+}
+
+.panel:not(.open) {
+  width: 0;
+}
+
+.panel:not(.open) .search-results {
+  display: none;
 }

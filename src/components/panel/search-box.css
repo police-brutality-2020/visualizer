@@ -1,7 +1,4 @@
 .search-box {
-  display: flex;
-  flex-direction: row;
-
   width: 392px;
   height: 48px;
   margin: 8px;
@@ -11,7 +8,14 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
 }
 
-.search-box input {
+.search-box form {
+  display: flex;
+  flex-direction: row;
+
+  height: 100%;
+}
+
+.search-box form input {
   flex: 1;
 
   border: none;

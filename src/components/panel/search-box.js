@@ -14,16 +14,16 @@ function SearchBox({ onSearch }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="search-box">
+    <div className="search-box">
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Search Police Brutality"
           value={input}
           onChange={handleChange}
         />
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 
