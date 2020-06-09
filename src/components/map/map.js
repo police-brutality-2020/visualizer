@@ -1,6 +1,8 @@
 import React from 'react';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import HeatLayer from './heat-layer';
+import useLocation from '../../hooks/getLocations';
+import getClosetCity from '../../util/closestCity';
 
 const containerStyle = {
   flex: '1',
@@ -27,8 +29,15 @@ const options = {
 };
 
 function Map() {
+  const data = useLocation();
+  if (!data) return null;
   function handleMapClick(e) {
-    console.log('coordinates', e.latLng.lat(), e.latLng.lng());
+    const coordinate = {
+      lat: e.latLng.lat(),
+      long: e.latLng.lng(),
+    };
+    const city = getClosetCity(coordinate, data);
+    console.log(city);
   }
 
   return (

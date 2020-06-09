@@ -11,15 +11,9 @@ const options = {
 function HeatLayer() {
   const data = useLocation();
   if (!data) return null;
-  const filteredLocations = data.filter((el) => {
-    return el.coordinates !== undefined;
-  });
-  const mappedCoordinates = filteredLocations.map(
+  const mappedCoordinates = data.map(
     (location) =>
-      new google.maps.LatLng(
-        location.coordinates.lat,
-        location.coordinates.lng,
-      ),
+      new google.maps.LatLng(location.geocoding.lat, location.geocoding.long),
   );
 
   return <HeatmapLayer data={mappedCoordinates} options={options} />;
