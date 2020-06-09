@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import states from 'us_latlng_json';
-import getStateTwoDigitCode from '../../data/states';
+import getStateTwoDigitCode from '../data/states';
 
 const useLocations = () => {
   const [locations, setLocations] = useState([]);

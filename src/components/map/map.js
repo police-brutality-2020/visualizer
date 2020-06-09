@@ -3,7 +3,7 @@ import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import HeatLayer from './heat-layer';
 
 const containerStyle = {
-  width: '100%',
+  flex: '1',
   height: '100vh',
 };
 
@@ -12,8 +12,17 @@ const options = {
     lat: 38,
     lng: -98,
   },
+  restriction: {
+    latLngBounds: {
+      north: 52,
+      south: 22,
+      west: -136,
+      east: -60,
+    },
+  },
   zoom: 5,
   mapTypeControl: false,
+  fullscreenControl: false,
   streetViewControl: false,
 };
 
