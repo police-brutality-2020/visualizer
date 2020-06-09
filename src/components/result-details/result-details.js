@@ -1,4 +1,5 @@
 import React from 'react';
+import Evidence from './evidence';
 import Links from './links';
 
 import './result-details.css';
@@ -21,6 +22,7 @@ function ResultDetails() {
       <div className="divider" />
       <Links urls={urls} />
       <div className="divider" />
+      <Evidence />
     </div>
   );
 }
