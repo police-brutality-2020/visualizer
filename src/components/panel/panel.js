@@ -7,11 +7,12 @@ import './panel.css';
 function Panel() {
   const [isOpen, setOpen] = React.useState(false);
 
+  const handleClear = () => setOpen(false);
   const handleSearch = () => setOpen(true);
 
   return (
     <div className={`panel ${isOpen ? 'open' : ''}`}>
-      <SearchBox onSearch={handleSearch} />
+      <SearchBox onClear={handleClear} onSearch={handleSearch} />
       <SearchResults />
     </div>
   );
