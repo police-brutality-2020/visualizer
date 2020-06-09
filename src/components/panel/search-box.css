@@ -15,10 +15,34 @@
   height: 100%;
 }
 
-.search-box form input {
+.search-box form .search-input {
   flex: 1;
+
+  padding: 16px;
+
+  font-size: 15px;
+  font-weight: 500;
 
   border: none;
   outline: none;
   background: none;
+}
+
+.search-box form .search-input::placeholder {
+  color: #bbbbbb;
+}
+
+.search-box form .search-icon {
+  width: 24px;
+  height: 100%;
+
+  padding: 0 16px;
+
+  color: #bbbbbb;
+  cursor: pointer;
+}
+
+.search-box form .search-icon:hover,
+.search-box form .search-icon.active {
+  color: #03A9F4;
 }

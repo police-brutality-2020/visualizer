@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { MdSearch } from 'react-icons/md';
 
 import './search-box.css';
 
@@ -17,11 +18,13 @@ function SearchBox({ onSearch }) {
     <div className="search-box">
       <form onSubmit={handleSubmit}>
         <input
+          className="search-input"
           type="text"
-          placeholder="Search Police Brutality"
           value={input}
+          placeholder="Search Police Brutality"
           onChange={handleChange}
         />
+        <MdSearch className="search-icon" />
       </form>
     </div>
   );
