@@ -32,12 +32,23 @@ const options = {
 };
 
 function Map({ data }) {
+  const [map, setMap] = React.useState(null);
+
+  const onLoad = React.useCallback(function callback(mapInstance) {
+    setMap(mapInstance);
+  }, []);
+
   function handleMapClick(e) {
     const coordinate = {
       lat: e.latLng.lat(),
       long: e.latLng.lng(),
     };
     const city = getClosetCity(coordinate, data);
+    map.setZoom(8);
+    map.panTo({
+      lat: Number(city.coordinate.lat),
+      lng: Number(city.coordinate.long),
+    });
     console.log(city);
   }
 
@@ -46,6 +57,7 @@ function Map({ data }) {
       <GoogleMap
         mapContainerStyle={containerStyle}
         options={options}
+        onLoad={onLoad}
         onClick={handleMapClick}
       >
         <HeatLayer data={data} />
