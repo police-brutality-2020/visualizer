@@ -3,13 +3,3 @@
 
   padding: 12px 24px;
 }
-
-.result-details .actions {
-  display: flex;
-}
-
-.result-details .actions > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
