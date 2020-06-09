@@ -2,6 +2,9 @@ import React from 'react';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import HeatLayer from './heat-layer';
 
+const libraries = ['visualization'];
+const googleMapsApiKey = 'AIzaSyDGPAOkljsjapYWRKo89y6McxkZ3JzwZKI';
+
 const containerStyle = {
   flex: '1',
   height: '100vh',
@@ -28,10 +31,7 @@ const options = {
 
 function Map() {
   return (
-    <LoadScript
-      libraries={['visualization']}
-      googleMapsApiKey="AIzaSyDGPAOkljsjapYWRKo89y6McxkZ3JzwZKI"
-    >
+    <LoadScript libraries={libraries} googleMapsApiKey={googleMapsApiKey}>
       <GoogleMap mapContainerStyle={containerStyle} options={options}>
         <HeatLayer />
       </GoogleMap>
