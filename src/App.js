@@ -19,12 +19,12 @@ function App() {
   return (
     <div className="app">
       <Omnibox
-        key={search}
+        key={`omnibox-${search}`}
         defaultInput={search}
         onClear={handleClear}
         onSearch={setSearch}
       />
-      <Panel data={results} isOpen={isOpen} />
+      <Panel key={`panel-${search}`} data={results} isOpen={isOpen} />
       <Map data={data} onCityClick={setSearch} />
     </div>
   );
