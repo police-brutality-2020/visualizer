@@ -1,5 +1,6 @@
 .links {
   display: flex;
+  padding: 12px;
 }
 
 .links a {
@@ -29,7 +30,7 @@
 }
 
 .links a span {
-  margin: 4px;
+  margin-top: 4px;
 
   font-size: 13px;
   font-weight: 400;

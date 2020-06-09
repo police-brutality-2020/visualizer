@@ -1,5 +1,12 @@
 .result-details {
   flex: 1;
+}
 
+.result-details h3 {
   padding: 12px 24px;
+}
+
+.result-details .divider {
+  height: 1px;
+  background-color: #e6e6e6;
 }
