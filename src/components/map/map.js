@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import HeatLayer from './heat-layer';
+import getClosetCity from '../../util/closestCity';
 
 const libraries = ['visualization'];
 const googleMapsApiKey = 'AIzaSyDGPAOkljsjapYWRKo89y6McxkZ3JzwZKI';
@@ -29,14 +31,31 @@ const options = {
   streetViewControl: false,
 };
 
-function Map() {
+function Map({ data }) {
+  function handleMapClick(e) {
+    const coordinate = {
+      lat: e.latLng.lat(),
+      long: e.latLng.lng(),
+    };
+    const city = getClosetCity(coordinate, data);
+    console.log(city);
+  }
+
   return (
     <LoadScript libraries={libraries} googleMapsApiKey={googleMapsApiKey}>
-      <GoogleMap mapContainerStyle={containerStyle} options={options}>
-        <HeatLayer />
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        options={options}
+        onClick={handleMapClick}
+      >
+        <HeatLayer data={data} />
       </GoogleMap>
     </LoadScript>
   );
 }
+
+Map.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default Map;
