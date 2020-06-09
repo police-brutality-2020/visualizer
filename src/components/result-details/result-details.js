@@ -6,7 +6,6 @@ import './result-details.css';
 // TODO: Use URLs from the incident object
 const urls = [
   'https://twitter.com/courtenay_roche/status/1267653137969623040',
-  'https://twitter.com/yagirlbrookie09/status/1267647898365427714',
   'https://www.4029tv.com/article/bentonville-police-deploy-tear-gas-on-protesters/32736629#',
   'https://www.reddit.com/r/nextfuckinglevel/comments/gtv4co/downtown_salt_lake_city_may_30th_2020_unarmed/',
 ];
