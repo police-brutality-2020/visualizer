@@ -5,7 +5,13 @@ import './search-result.css';
 
 function SearchResult({ title, location, date, onClick }) {
   return (
-    <div className="search-result" onClick={onClick}>
+    <div
+      className="search-result"
+      role="button"
+      tabIndex={0}
+      onClick={onClick}
+      onKeyDown={onClick}
+    >
       <h4>{title}</h4>
       <p>
         {location} &bull; {date}
