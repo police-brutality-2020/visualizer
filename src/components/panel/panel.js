@@ -6,18 +6,15 @@ import SearchResults from '../search-results/search-results';
 import './panel.css';
 
 function Panel({ data, isOpen }) {
-  const [showDetails, setShowDetails] = React.useState(false);
-
-  // TODO: Pass up an incident ID or some other relevant data to show details for
-  const handleResultClick = () => setShowDetails(true);
+  const [openResult, setOpenResult] = React.useState(null);
 
   return (
     <div className={`panel ${isOpen ? 'open' : ''}`}>
       <div className="omnibox-spacer" />
-      {showDetails ? (
-        <ResultDetails />
+      {openResult ? (
+        <ResultDetails id={openResult} />
       ) : (
-        <SearchResults data={data} onResultClick={handleResultClick} />
+        <SearchResults data={data} onResultClick={setOpenResult} />
       )}
     </div>
   );

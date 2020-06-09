@@ -7,12 +7,13 @@ import './search-results.css';
 function SearchResults({ data, onResultClick }) {
   const results = data.map((result) => (
     <SearchResult
+      id={result.id}
       key={result.id}
       title={result.title}
       city={result.city}
       state={result.state}
       date={result.date}
-      onClick={onResultClick}
+      onResultClick={onResultClick}
     />
   ));
 
