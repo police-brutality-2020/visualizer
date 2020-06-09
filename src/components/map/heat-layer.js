@@ -1,16 +1,14 @@
 /* global google */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { HeatmapLayer } from '@react-google-maps/api';
-import useLocation from '../../hooks/getLocations';
 
 const options = {
   dissipating: false,
   radius: 2,
 };
 
-function HeatLayer() {
-  const data = useLocation();
-  if (!data) return null;
+function HeatLayer({ data }) {
   const mappedCoordinates = data.map(
     (location) =>
       new google.maps.LatLng(location.geocoding.lat, location.geocoding.long),
@@ -18,5 +16,9 @@ function HeatLayer() {
 
   return <HeatmapLayer data={mappedCoordinates} options={options} />;
 }
+
+HeatLayer.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default HeatLayer;

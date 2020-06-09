@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import HeatLayer from './heat-layer';
-import useLocation from '../../hooks/getLocations';
 import getClosetCity from '../../util/closestCity';
 
 const containerStyle = {
@@ -28,9 +28,7 @@ const options = {
   streetViewControl: false,
 };
 
-function Map() {
-  const data = useLocation();
-  if (!data) return null;
+function Map({ data }) {
   function handleMapClick(e) {
     const coordinate = {
       lat: e.latLng.lat(),
@@ -50,10 +48,14 @@ function Map() {
         options={options}
         onClick={handleMapClick}
       >
-        <HeatLayer />
+        <HeatLayer data={data} />
       </GoogleMap>
     </LoadScript>
   );
 }
+
+Map.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default Map;
