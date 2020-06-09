@@ -1,21 +1,30 @@
 import React from 'react';
-import SearchBox from './search-box';
-import SearchResults from './search-results';
+import PropTypes from 'prop-types';
+import ResultDetails from '../result-details/result-details';
+import SearchResults from '../search-results/search-results';
 
 import './panel.css';
 
-function Panel() {
-  const [isOpen, setOpen] = React.useState(false);
+function Panel({ isOpen }) {
+  const [showDetails, setShowDetails] = React.useState(false);
 
-  const handleClear = () => setOpen(false);
-  const handleSearch = () => setOpen(true);
+  // TODO: Pass up an incident ID or some other relevant data to show details for
+  const handleResultClick = () => setShowDetails(true);
 
   return (
     <div className={`panel ${isOpen ? 'open' : ''}`}>
-      <SearchBox onClear={handleClear} onSearch={handleSearch} />
-      <SearchResults />
+      <div className="omnibox-spacer" />
+      {showDetails ? (
+        <ResultDetails />
+      ) : (
+        <SearchResults onResultClick={handleResultClick} />
+      )}
     </div>
   );
 }
+
+Panel.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+};
 
 export default Panel;

@@ -12,9 +12,9 @@
 }
 
 .panel:not(.open) {
-  width: 0;
+  display: none;
 }
 
-.panel:not(.open) .search-results {
-  display: none;
+.panel .omnibox-spacer {
+  flex: 0 0 64px;
 }

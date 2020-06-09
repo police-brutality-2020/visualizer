@@ -4,6 +4,9 @@ import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import HeatLayer from './heat-layer';
 import getClosetCity from '../../util/closestCity';
 
+const libraries = ['visualization'];
+const googleMapsApiKey = 'AIzaSyDGPAOkljsjapYWRKo89y6McxkZ3JzwZKI';
+
 const containerStyle = {
   flex: '1',
   height: '100vh',
@@ -39,10 +42,7 @@ function Map({ data }) {
   }
 
   return (
-    <LoadScript
-      libraries={['visualization']}
-      googleMapsApiKey="AIzaSyDGPAOkljsjapYWRKo89y6McxkZ3JzwZKI"
-    >
+    <LoadScript libraries={libraries} googleMapsApiKey={googleMapsApiKey}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         options={options}

@@ -1,0 +1,42 @@
+.links {
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 12px 8px 0 8px;
+}
+
+.links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex: 1;
+  margin-bottom: 12px;
+
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.links a svg {
+  width: 18px;
+  height: 18px;
+
+  padding: 8px;
+
+  color: #3771e0;
+  border-radius: 17px;
+  border: 1px solid #3771e0;
+}
+
+.links a:hover svg {
+  background-color: #f1f3f4;
+}
+
+.links a span {
+  margin-top: 4px;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  color: #3771e0;
+}

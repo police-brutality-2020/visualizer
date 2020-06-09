@@ -1,0 +1,25 @@
+.result-details {
+  flex: 1;
+  
+  overflow-y: auto;
+}
+
+.result-details > h3 {
+  margin: 0;
+  padding: 12px 24px 0 24px;
+
+  font-size: 22px;
+}
+
+.result-details > p {
+  margin: 0;
+  padding: 8px 24px 16px 24px;
+
+  color: #70757a;
+  font-size: 14px;
+}
+
+.result-details .divider {
+  height: 1px;
+  background-color: #e6e6e6;
+}

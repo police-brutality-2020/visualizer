@@ -1,4 +1,8 @@
-.search-box {
+.omnibox {
+  position: absolute;
+  left: 0;
+  top: 0;
+
   width: 392px;
   height: 48px;
   margin: 8px;
@@ -6,9 +10,11 @@
 
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+
+  z-index: 2;
 }
 
-.search-box form {
+.omnibox form {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -16,7 +22,7 @@
   height: 100%;
 }
 
-.search-box form .search-input {
+.omnibox form input {
   flex: 1;
 
   padding: 16px;
@@ -29,11 +35,11 @@
   background: none;
 }
 
-.search-box form .search-input::placeholder {
+.omnibox form input::placeholder {
   color: #bbbbbb;
 }
 
-.search-box form .search-icon {
+.omnibox form .icon {
   width: 24px;
   height: 32px;
 
@@ -43,12 +49,12 @@
   cursor: pointer;
 }
 
-.search-box form .search-icon:hover,
-.search-box form .search-icon.active {
-  color: #03a9f4;
+.omnibox form .icon:hover,
+.omnibox form .icon.active {
+  color: #3771E0;
 }
 
-.search-box form .search-divider {
+.omnibox form .divider {
   width: 1px;
   height: 24px;
 
