@@ -1,5 +1,7 @@
 .result-details {
   flex: 1;
+  
+  overflow-y: auto;
 }
 
 .result-details > h3 {

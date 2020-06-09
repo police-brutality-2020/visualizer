@@ -7,14 +7,49 @@
   border-bottom: 1px solid #e6e6e6;
 }
 
-.video .attribution {
+.video a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.video a:hover {
+  text-decoration: underline;
+}
+
+.video a img {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 16px;
+}
+
+.video a .source {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.video a .source .name {
+  color: #000000;
   font-size: 15px;
 }
 
+.video a .source .type {
+  color: #70757a;
+  font-size: 14px;
+}
+
 .video > p {
-  margin: 0;
+  margin: 12px 0;
 
   color: #000000;
   font-size: 14px;
-  font-weight: 400;
+}
+
+.video video {
+  height: 256px;
+  object-fit: cover;
 }
