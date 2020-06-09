@@ -1,0 +1,27 @@
+.search-result {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 112px;
+  padding: 10px 18px 10px 24px;
+
+  cursor: pointer;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.search-result:hover {
+  background-color: #fafafa;
+}
+
+.search-result h4 {
+  margin: 0;
+
+  font-size: 15px;
+}
+
+.search-result p {
+  margin: 4px 0;
+
+  color: #70757a;
+  font-size: 13px;
+}
