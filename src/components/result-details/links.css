@@ -1,6 +1,8 @@
 .links {
   display: flex;
-  padding: 12px;
+  flex-wrap: wrap;
+
+  padding: 12px 8px 0 8px;
 }
 
 .links a {
@@ -9,6 +11,7 @@
   align-items: center;
 
   flex: 1;
+  margin-bottom: 12px;
 
   cursor: pointer;
   text-decoration: none;

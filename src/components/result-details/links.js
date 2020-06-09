@@ -1,16 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FaLink } from 'react-icons/fa';
+import { FaLink, FaTwitter, FaReddit } from 'react-icons/fa';
 
 import './links.css';
 
 const getIcon = (url) => {
   const link = new URL(url);
-  console.dir(link);
-  return <FaLink />;
+
+  switch (link.host) {
+    case 'twitter.com':
+      return <FaTwitter />;
+    case 'www.reddit.com':
+      return <FaReddit />;
+    default:
+      return <FaLink />;
+  }
 };
 
-const getLabel = () => '@username1';
+const getLabel = (url) => {
+  const link = new URL(url);
+  switch (link.host) {
+    case 'twitter.com':
+      // '@username'
+      return `@${link.pathname.match(/([^/]+)/)[1]}`;
+    case 'www.reddit.com':
+      // 'r/subreddit'
+      return link.pathname.match(/r\/[^/]+/)[0];
+    default:
+      return link.hostname;
+  }
+};
 
 function Links({ urls }) {
   const elements = urls.map((url) => (
