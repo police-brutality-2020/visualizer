@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { format } from 'date-fns';
 import Evidence from './evidence';
 import Links from './links';
 import useEvidence from '../../hooks/getEvidence';
@@ -14,7 +15,8 @@ function ResultDetails({ id }) {
     <div className="result-details">
       <h3>{data.title}</h3>
       <p>
-        {data.city}, {data.state} &bull; {data.date}
+        {data.city}, {data.state} &bull;{' '}
+        {format(new Date(data.date), 'LLL dd, yyyy')}
       </p>
       <div className="divider" />
       <Links urls={data.links} />
