@@ -23,3 +23,11 @@
   height: 1px;
   background-color: #e6e6e6;
 }
+
+.results-details-loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

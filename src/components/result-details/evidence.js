@@ -7,7 +7,7 @@ import './evidence.css';
 function Evidence({ data }) {
   const videos = data.map((item) => {
     // Ensure the item has video
-    if (!item.video || !item.video[0].streams) return null;
+    if (!item.video[0] || !item.video[0].streams) return null;
     const video = item.video[0];
     const stream = video.streams[0];
 

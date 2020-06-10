@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
+import Loader from 'react-loader-spinner';
 import Evidence from './evidence';
 import Links from './links';
 import useEvidence from '../../hooks/getEvidence';
@@ -9,7 +10,18 @@ import './result-details.css';
 
 function ResultDetails({ id }) {
   const data = useEvidence(id);
-  if (!data) return null;
+  if (!data)
+    return (
+      <div className="results-details-loader">
+        <Loader
+          type="TailSpin"
+          color="#000000"
+          height={50}
+          width={50}
+          timeout={3000}
+        />
+      </div>
+    );
 
   return (
     <div className="result-details">
