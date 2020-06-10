@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 import Loader from 'react-loader-spinner';
+import { FaChevronLeft } from 'react-icons/fa';
 import Evidence from './evidence';
 import Links from './links';
 import useEvidence from '../../hooks/getEvidence';
 
 import './result-details.css';
 
-function ResultDetails({ id }) {
+function ResultDetails({ id, hideResultDetail }) {
   const data = useEvidence(id);
   if (!data)
     return (
@@ -25,11 +26,16 @@ function ResultDetails({ id }) {
 
   return (
     <div className="result-details">
-      <h3>{data.title}</h3>
-      <p>
-        {data.city}, {data.state} &bull;{' '}
-        {format(new Date(data.date), 'LLL dd, yyyy')}
-      </p>
+      <div className="result-details-header">
+        <FaChevronLeft onClick={hideResultDetail} />
+        <div className="result-details-header-text">
+          <h3>{data.title}</h3>
+          <p>
+            {data.city}, {data.state} &bull;{' '}
+            {format(new Date(data.date), 'LLL dd, yyyy')}
+          </p>
+        </div>
+      </div>
       <div className="divider" />
       <Links urls={data.links} />
       <div className="divider" />
