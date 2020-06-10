@@ -1,41 +1,43 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Video from './video';
 
 import './evidence.css';
 
-function Evidence() {
+function Evidence({ data }) {
+  const videos = data.map((item) => {
+    // Ensure the item has at least one video
+    const video = item.video[0];
+    if (!video) return null;
+
+    // Ensure the video has at least one stream
+    const stream = video.streams[0];
+    if (!stream) return null;
+
+    return (
+      <Video
+        key={item.id}
+        name={video.id}
+        type={video.site}
+        date={video.created_at}
+        description={video.title}
+        linkUrl={video.url}
+        videoUrl={stream.url}
+        thumbnailUrl={video.thumbnail}
+      />
+    );
+  });
+
   return (
     <div className="evidence">
       <h4>Evidence</h4>
-      <Video
-        name="@username"
-        type="Twitter"
-        date="June 9th, 2020"
-        description="This is a description for the video."
-        linkUrl="https://www.google.ca"
-        videoUrl="https://video.twimg.com/ext_tw_video/1267647817297858562/pu/vid/720x1280/SWGuf5vA2eS3O0vJ.mp4?tag=10"
-        thumbnailUrl="https://pbs.twimg.com/ext_tw_video_thumb/1267647817297858562/pu/img/RY2Iu3AgQ2BAGXzj.jpg?name=orig"
-      />
-      <Video
-        name="@username"
-        type="Twitter"
-        date="June 9th, 2020"
-        description="This is a description for the video."
-        linkUrl="https://www.google.ca"
-        videoUrl="https://video.twimg.com/ext_tw_video/1267647817297858562/pu/vid/720x1280/SWGuf5vA2eS3O0vJ.mp4?tag=10"
-        thumbnailUrl="https://pbs.twimg.com/ext_tw_video_thumb/1267647817297858562/pu/img/RY2Iu3AgQ2BAGXzj.jpg?name=orig"
-      />
-      <Video
-        name="@username"
-        type="Twitter"
-        date="June 9th, 2020"
-        description="This is a description for the video."
-        linkUrl="https://www.google.ca"
-        videoUrl="https://video.twimg.com/ext_tw_video/1267647817297858562/pu/vid/720x1280/SWGuf5vA2eS3O0vJ.mp4?tag=10"
-        thumbnailUrl="https://pbs.twimg.com/ext_tw_video_thumb/1267647817297858562/pu/img/RY2Iu3AgQ2BAGXzj.jpg?name=orig"
-      />
+      {videos}
     </div>
   );
 }
+
+Evidence.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default Evidence;

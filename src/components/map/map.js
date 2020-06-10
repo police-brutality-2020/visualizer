@@ -31,7 +31,7 @@ const options = {
   streetViewControl: false,
 };
 
-function Map({ data }) {
+function Map({ data, onCityClick }) {
   const [map, setMap] = React.useState(null);
 
   const onLoad = React.useCallback(function callback(mapInstance) {
@@ -39,17 +39,21 @@ function Map({ data }) {
   }, []);
 
   function handleMapClick(e) {
-    const coordinate = {
-      lat: e.latLng.lat(),
-      long: e.latLng.lng(),
-    };
-    const city = getClosetCity(coordinate, data);
+    const city = getClosetCity(
+      {
+        lat: e.latLng.lat(),
+        long: e.latLng.lng(),
+      },
+      data,
+    );
+
     map.setZoom(8);
     map.panTo({
       lat: Number(city.coordinate.lat),
       lng: Number(city.coordinate.long),
     });
-    console.log(city);
+
+    onCityClick(city.name);
   }
 
   return (
@@ -68,6 +72,7 @@ function Map({ data }) {
 
 Map.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onCityClick: PropTypes.func.isRequired,
 };
 
 export default Map;
