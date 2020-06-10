@@ -14,7 +14,12 @@ function App() {
   if (!data) return null;
 
   const isOpen = !!search;
-  const results = data.filter((item) => item.city === search);
+  let results = data.filter((item) => item.city === search);
+  if (results.length === 0) {
+    results = data.filter((item) =>
+      item.title.toLowerCase().includes(search.toLowerCase()),
+    );
+  }
 
   return (
     <div className="app">
