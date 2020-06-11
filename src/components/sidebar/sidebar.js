@@ -38,7 +38,12 @@ function Sidebar({ incidents, mapValue }) {
         onClear={handleClear}
         onSearch={setSearch}
       />
-      <Panel key={`panel-${search}`} results={results} isOpen={isOpen} />
+      <Panel
+        key={`panel-${search}`}
+        search={search}
+        results={results}
+        isOpen={isOpen}
+      />
     </>
   );
 }
