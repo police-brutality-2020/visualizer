@@ -3,7 +3,8 @@
   left: 0;
   top: 0;
 
-  width: 392px;
+  max-width: 392px;
+  width: calc(100% - 16px);
   height: 48px;
   margin: 8px;
   border-radius: 8px;
@@ -25,6 +26,7 @@
 .omnibox form input {
   flex: 1;
 
+  min-width: 0;
   padding: 16px 8px;
 
   font-size: 15px;
@@ -33,6 +35,7 @@
   border: none;
   outline: none;
   background: none;
+  text-overflow: ellipsis;
 }
 
 .omnibox form input::placeholder {
@@ -40,6 +43,8 @@
 }
 
 .omnibox form .icon {
+  flex: 0 0 24px;
+
   width: 24px;
   height: 24px;
 
