@@ -39,6 +39,7 @@ function Map({ incidents, onCityClick }) {
   }, []);
 
   function handleMapClick(e) {
+    if (incidents.length === 0) return;
     const city = getClosetCity(
       {
         lat: e.latLng.lat(),
@@ -46,7 +47,6 @@ function Map({ incidents, onCityClick }) {
       },
       incidents,
     );
-
     map.setZoom(8);
     map.panTo({
       lat: Number(city.coordinate.lat),
