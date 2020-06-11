@@ -16,7 +16,7 @@ function Evidence({ data }) {
         key={item.id}
         type={video.site}
         date={video.created_at}
-        description={video.description}
+        description={video.description || video.title}
         linkUrl={video.url}
         videoUrl={stream.url}
         thumbnailUrl={video.thumbnail}
