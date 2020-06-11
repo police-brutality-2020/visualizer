@@ -7,12 +7,13 @@ import './panel.css';
 
 function Panel({ data, isOpen }) {
   const [openResult, setOpenResult] = React.useState(null);
+  const hideResultDetail = () => setOpenResult(false);
 
   return (
     <div className={`panel ${isOpen ? 'open' : ''}`}>
       <div className="omnibox-spacer" />
       {openResult ? (
-        <ResultDetails id={openResult} />
+        <ResultDetails hideResultDetail={hideResultDetail} id={openResult} />
       ) : (
         <SearchResults data={data} onResultClick={setOpenResult} />
       )}

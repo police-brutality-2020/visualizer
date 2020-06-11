@@ -8,10 +8,12 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "date-fns": "^2.14.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
+    "react-loader-spinner": "^3.1.14",
     "react-scripts": "3.4.1",
     "us_latlng_json": "^1.1.0"
   },

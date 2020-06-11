@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FaLink, FaTwitter, FaReddit } from 'react-icons/fa';
+import { FaLink, FaTwitter, FaReddit, FaFacebookF } from 'react-icons/fa';
 
 import './links.css';
 
@@ -12,6 +12,8 @@ const getIcon = (url) => {
       return <FaTwitter />;
     case 'www.reddit.com':
       return <FaReddit />;
+    case 'www.facebook.com':
+      return <FaFacebookF />;
     default:
       return <FaLink />;
   }

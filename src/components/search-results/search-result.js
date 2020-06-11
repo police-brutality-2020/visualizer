@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { format } from 'date-fns';
 
 import './search-result.css';
 
@@ -16,7 +17,7 @@ function SearchResult({ id, title, city, state, date, onResultClick }) {
     >
       <h4>{title}</h4>
       <p>
-        {city}, {state} &bull; {date}
+        {city}, {state} &bull; {format(new Date(date), 'LLL dd, yyyy')}
       </p>
     </div>
   );
