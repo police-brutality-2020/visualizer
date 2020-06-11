@@ -1,7 +1,7 @@
 # Police Brutality Visualizer ✊🏿
 8 minutes and 46 seconds is the length of time associated with the killing of George Floyd, who died in police custody after police officer Derek Chauvin knelt on his neck for roughly eight minutes.
 
-This repo provides a heatmap that visualizes the act of assault by public servants to American Citizens during non-violent acts of protest.
+This app provides a heatmap visualization for the acts of assault by public servants to American Citizens during non-violent acts of protest.
 
 ## Contributing
 - Install dependencies. A quick `yarn install` should do the trick ✨
