@@ -2,6 +2,7 @@ import React from 'react';
 import Analytics from './services/analytics';
 import Map from './components/map/map';
 import Sidebar from './components/sidebar/sidebar';
+import Footer from './components/footer/footer';
 import useIncidents from './hooks/getIncidents';
 
 import './App.css';
@@ -21,6 +22,7 @@ function App() {
     <div className="app">
       <Sidebar incidents={incidents} mapValue={mapValue} />
       <Map incidents={incidents} onCityClick={setMapValue} />
+      <Footer />
     </div>
   );
 }
