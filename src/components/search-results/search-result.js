@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
+import Analytics from '../../services/analytics';
 
 import './search-result.css';
 
 function SearchResult({ id, title, city, state, date, onResultClick }) {
-  const onClick = () => onResultClick(id);
+  const onClick = () => {
+    Analytics.event('SearchResult', 'Result clicked', title);
+    onResultClick(id);
+  };
 
   return (
     <div

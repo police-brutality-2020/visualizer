@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaFistRaised } from 'react-icons/fa';
 import { MdSearch, MdClear } from 'react-icons/md';
+import Analytics from '../../services/analytics';
 
 import './omnibox.css';
 
@@ -11,16 +12,19 @@ function Omnibox({ defaultInput, onClear, onSearch }) {
   const handleChange = (e) => setInput(e.target.value);
 
   const handleSubmit = (e) => {
+    Analytics.event('Omnibox', 'Searched for term', input);
     onSearch(input);
     e.preventDefault();
   };
 
   const handleClear = () => {
+    Analytics.event('Omnibox', 'Cleared input');
     onClear();
     setInput('');
   };
 
   const handleLogoClick = () => {
+    Analytics.event('Omnibox', 'Logo clicked', input);
     window.open(
       'https://github.com/police-brutality-2020/visualizer',
       'police-brutality-2020',

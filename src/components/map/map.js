@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import HeatLayer from './heat-layer';
+import Analytics from '../../services/analytics';
 import getClosetCity from '../../util/closestCity';
 
 const libraries = ['visualization'];
@@ -53,6 +54,7 @@ function Map({ incidents, onCityClick }) {
       lng: Number(city.coordinate.long),
     });
 
+    Analytics.event('Map', 'Clicked on a city', city.name);
     onCityClick(city.name);
   }
 
