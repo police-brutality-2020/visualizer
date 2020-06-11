@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Omnibox from '../omnibox/omnibox';
 import Panel from '../panel/panel';
 
-function Sidebar({ data, mapValue }) {
+function Sidebar({ incidents, mapValue }) {
   const [search, setSearch] = React.useState('');
 
   React.useEffect(() => {
@@ -12,9 +12,10 @@ function Sidebar({ data, mapValue }) {
 
   const handleClear = () => setSearch('');
   const isOpen = !!search;
-  let results = data.filter((item) => item.city === search);
+
+  let results = incidents.filter((item) => item.city === search);
   if (results.length === 0) {
-    results = data.filter((item) =>
+    results = incidents.filter((item) =>
       item.title.toLowerCase().includes(search.toLowerCase()),
     );
   }
@@ -27,13 +28,13 @@ function Sidebar({ data, mapValue }) {
         onClear={handleClear}
         onSearch={setSearch}
       />
-      <Panel key={`panel-${search}`} data={results} isOpen={isOpen} />
+      <Panel key={`panel-${search}`} results={results} isOpen={isOpen} />
     </>
   );
 }
 
 Sidebar.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  incidents: PropTypes.arrayOf(PropTypes.object).isRequired,
   mapValue: PropTypes.string.isRequired,
 };
 

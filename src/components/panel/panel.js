@@ -5,7 +5,7 @@ import SearchResults from '../search-results/search-results';
 
 import './panel.css';
 
-function Panel({ data, isOpen }) {
+function Panel({ results, isOpen }) {
   const [openResult, setOpenResult] = React.useState(null);
   const hideResultDetail = () => setOpenResult(false);
 
@@ -15,14 +15,14 @@ function Panel({ data, isOpen }) {
       {openResult ? (
         <ResultDetails hideResultDetail={hideResultDetail} id={openResult} />
       ) : (
-        <SearchResults data={data} onResultClick={setOpenResult} />
+        <SearchResults results={results} onResultClick={setOpenResult} />
       )}
     </div>
   );
 }
 
 Panel.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  results: PropTypes.arrayOf(PropTypes.object).isRequired,
   isOpen: PropTypes.bool.isRequired,
 };
 

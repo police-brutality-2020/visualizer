@@ -8,17 +8,16 @@ const options = {
   radius: 2,
 };
 
-function HeatLayer({ data }) {
-  const mappedCoordinates = data.map(
-    (location) =>
-      new google.maps.LatLng(location.geocoding.lat, location.geocoding.long),
+function HeatLayer({ incidents }) {
+  const coordinates = incidents.map(
+    ({ geocoding }) => new google.maps.LatLng(geocoding.lat, geocoding.long),
   );
 
-  return <HeatmapLayer data={mappedCoordinates} options={options} />;
+  return <HeatmapLayer data={coordinates} options={options} />;
 }
 
 HeatLayer.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  incidents: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default HeatLayer;
