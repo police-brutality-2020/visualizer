@@ -46,6 +46,7 @@ function ResultDetails({ id, hideResultDetail }) {
 
 ResultDetails.propTypes = {
   id: PropTypes.string.isRequired,
+  hideResultDetail: PropTypes.func.isRequired,
 };
 
 export default ResultDetails;
