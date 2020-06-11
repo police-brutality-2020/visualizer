@@ -25,7 +25,7 @@
 .omnibox form input {
   flex: 1;
 
-  padding: 16px;
+  padding: 16px 8px;
 
   font-size: 15px;
   font-weight: 500;
@@ -41,9 +41,9 @@
 
 .omnibox form .icon {
   width: 24px;
-  height: 32px;
+  height: 24px;
 
-  padding: 8px 15px;
+  padding: 12px 15px;
 
   color: #bbbbbb;
   cursor: pointer;
@@ -52,6 +52,10 @@
 .omnibox form .icon:hover,
 .omnibox form .icon.active {
   color: #3771E0;
+}
+
+.omnibox form .icon.logo {
+  color: #000000;
 }
 
 .omnibox form .divider {

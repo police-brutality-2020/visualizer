@@ -4,8 +4,8 @@ import SearchResult from './search-result';
 
 import './search-results.css';
 
-function SearchResults({ data, onResultClick }) {
-  const results = data.map((result) => (
+function SearchResults({ results, onResultClick }) {
+  const elements = results.map((result) => (
     <SearchResult
       id={result.id}
       key={result.id}
@@ -17,11 +17,11 @@ function SearchResults({ data, onResultClick }) {
     />
   ));
 
-  return <div className="search-results">{results}</div>;
+  return <div className="search-results">{elements}</div>;
 }
 
 SearchResults.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  results: PropTypes.arrayOf(PropTypes.object).isRequired,
   onResultClick: PropTypes.func.isRequired,
 };
 

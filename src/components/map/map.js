@@ -31,7 +31,7 @@ const options = {
   streetViewControl: false,
 };
 
-function Map({ data, onCityClick }) {
+function Map({ incidents, onCityClick }) {
   const [map, setMap] = React.useState(null);
 
   const onLoad = React.useCallback(function callback(mapInstance) {
@@ -44,7 +44,7 @@ function Map({ data, onCityClick }) {
         lat: e.latLng.lat(),
         long: e.latLng.lng(),
       },
-      data,
+      incidents,
     );
 
     map.setZoom(8);
@@ -64,14 +64,14 @@ function Map({ data, onCityClick }) {
         onLoad={onLoad}
         onClick={handleMapClick}
       >
-        <HeatLayer data={data} />
+        <HeatLayer incidents={incidents} />
       </GoogleMap>
     </LoadScript>
   );
 }
 
 Map.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  incidents: PropTypes.arrayOf(PropTypes.object).isRequired,
   onCityClick: PropTypes.func.isRequired,
 };
 

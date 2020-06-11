@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FaFistRaised } from 'react-icons/fa';
 import { MdSearch, MdClear } from 'react-icons/md';
 
 import './omnibox.css';
@@ -19,9 +20,17 @@ function Omnibox({ defaultInput, onClear, onSearch }) {
     setInput('');
   };
 
+  const handleLogoClick = () => {
+    window.open(
+      'https://github.com/police-brutality-2020/visualizer',
+      'police-brutality-2020',
+    );
+  };
+
   return (
     <div className="omnibox">
       <form onSubmit={handleSubmit}>
+        <FaFistRaised className="icon logo" onClick={handleLogoClick} />
         <input
           type="text"
           value={input}

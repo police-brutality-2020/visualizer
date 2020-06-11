@@ -11,24 +11,12 @@ import './result-details.css';
 
 function ResultDetails({ id, hideResultDetail }) {
   const data = useEvidence(id);
-  if (!data)
-    return (
-      <div className="results-details-loader">
-        <Loader
-          type="TailSpin"
-          color="#000000"
-          height={50}
-          width={50}
-          timeout={3000}
-        />
-      </div>
-    );
 
-  return (
+  return data ? (
     <div className="result-details">
-      <div className="result-details-header">
+      <div className="header">
         <FaChevronLeft onClick={hideResultDetail} />
-        <div className="result-details-header-text">
+        <div>
           <h3>{data.title}</h3>
           <p>
             {data.city}, {data.state} &bull;{' '}
@@ -40,6 +28,16 @@ function ResultDetails({ id, hideResultDetail }) {
       <Links urls={data.links} />
       <div className="divider" />
       <Evidence data={data.evidence} />
+    </div>
+  ) : (
+    <div className="results-details-loader">
+      <Loader
+        type="TailSpin"
+        color="#000000"
+        height={50}
+        width={50}
+        timeout={3000}
+      />
     </div>
   );
 }

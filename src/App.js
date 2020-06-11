@@ -1,19 +1,20 @@
 import React from 'react';
 import Map from './components/map/map';
 import Sidebar from './components/sidebar/sidebar';
-import useLocations from './hooks/getLocations';
+import useIncidents from './hooks/getIncidents';
 
 import './App.css';
 
 function App() {
   const [mapValue, setMapValue] = React.useState('');
-  const data = useLocations();
-  if (!data) return null;
+
+  const incidents = useIncidents();
+  if (!incidents) return null;
 
   return (
     <div className="app">
-      <Sidebar data={data} mapValue={mapValue} />
-      <Map data={data} onCityClick={setMapValue} />
+      <Sidebar incidents={incidents} mapValue={mapValue} />
+      <Map incidents={incidents} onCityClick={setMapValue} />
     </div>
   );
 }

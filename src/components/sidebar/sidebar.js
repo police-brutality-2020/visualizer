@@ -1,9 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Fuse from 'fuse.js';
 import Omnibox from '../omnibox/omnibox';
 import Panel from '../panel/panel';
 
-function Sidebar({ data, mapValue }) {
+const fuse = new Fuse([], {
+  includeScore: true,
+  isCaseSensitive: false,
+  threshold: 0.3,
+  keys: ['city', 'state', 'title'],
+});
+
+function Sidebar({ incidents, mapValue }) {
   const [search, setSearch] = React.useState('');
 
   React.useEffect(() => {
@@ -12,12 +20,15 @@ function Sidebar({ data, mapValue }) {
 
   const handleClear = () => setSearch('');
   const isOpen = !!search;
-  let results = data.filter((item) => item.city === search);
-  if (results.length === 0) {
-    results = data.filter((item) =>
-      item.title.toLowerCase().includes(search.toLowerCase()),
-    );
-  }
+
+  // Inform the Fuse instance of the new `incidents` array
+  fuse.setCollection(incidents);
+
+  // Perform a fuzzy search and sort the results by date
+  const results = fuse
+    .search(search)
+    .map((result) => result.item)
+    .sort((a, b) => b.date.localeCompare(a.date));
 
   return (
     <>
@@ -27,13 +38,13 @@ function Sidebar({ data, mapValue }) {
         onClear={handleClear}
         onSearch={setSearch}
       />
-      <Panel key={`panel-${search}`} data={results} isOpen={isOpen} />
+      <Panel key={`panel-${search}`} results={results} isOpen={isOpen} />
     </>
   );
 }
 
 Sidebar.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  incidents: PropTypes.arrayOf(PropTypes.object).isRequired,
   mapValue: PropTypes.string.isRequired,
 };
 

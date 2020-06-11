@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useLocations = () => {
-  const [locations, setLocations] = useState([]);
+const useIncidents = () => {
+  const [incidents, setIncidents] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get(
         'https://api.846policebrutality.com/api/incidents',
       );
-      setLocations(data.data);
+      setIncidents(data.data);
     };
 
     fetchData();
   }, []);
 
-  return locations;
+  return incidents;
 };
 
-export default useLocations;
+export default useIncidents;
