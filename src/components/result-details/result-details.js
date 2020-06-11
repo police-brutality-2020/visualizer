@@ -14,9 +14,9 @@ function ResultDetails({ id, hideResultDetail }) {
 
   return data ? (
     <div className="result-details">
-      <div className="result-details-header">
+      <div className="header">
         <FaChevronLeft onClick={hideResultDetail} />
-        <div className="result-details-header-text">
+        <div>
           <h3>{data.title}</h3>
           <p>
             {data.city}, {data.state} &bull;{' '}

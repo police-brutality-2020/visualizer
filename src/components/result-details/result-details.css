@@ -4,20 +4,20 @@
   overflow-y: auto;
 }
 
-.result-details-header {
+.result-details .header {
   display: flex;
   align-items: center;
   padding: 0 20px;
 }
 
-.result-details-header-text > h3 {
+.result-details .header h3 {
   margin: 0;
   padding: 12px 18px 0 18px;
 
   font-size: 22px;
 }
 
-.result-details-header-text > p {
+.result-details .header p {
   margin: 0;
   padding: 8px 18px 16px 18px;
 
