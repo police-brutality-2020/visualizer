@@ -1,7 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Fuse from 'fuse.js';
 import Omnibox from '../omnibox/omnibox';
 import Panel from '../panel/panel';
+
+const fuse = new Fuse([], {
+  includeScore: true,
+  isCaseSensitive: false,
+  threshold: 0.3,
+  keys: ['city', 'state', 'title'],
+});
 
 function Sidebar({ incidents, mapValue }) {
   const [search, setSearch] = React.useState('');
@@ -13,12 +21,14 @@ function Sidebar({ incidents, mapValue }) {
   const handleClear = () => setSearch('');
   const isOpen = !!search;
 
-  let results = incidents.filter((item) => item.city === search);
-  if (results.length === 0) {
-    results = incidents.filter((item) =>
-      item.title.toLowerCase().includes(search.toLowerCase()),
-    );
-  }
+  // Inform the Fuse instance of the new `incidents` array
+  fuse.setCollection(incidents);
+
+  // Perform a fuzzy search and sort the results by date
+  const results = fuse
+    .search(search)
+    .map((result) => result.item)
+    .sort((a, b) => b.date.localeCompare(a.date));
 
   return (
     <>
