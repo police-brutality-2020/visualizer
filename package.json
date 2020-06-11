@@ -2,6 +2,7 @@
   "name": "visualizer",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://police-brutality-2020.github.io/visualizer/",
   "dependencies": {
     "@react-google-maps/api": "^1.9.5",
     "@testing-library/jest-dom": "^4.2.4",
@@ -19,6 +20,8 @@
     "us_latlng_json": "^1.1.0"
   },
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -50,6 +53,7 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "2.5.0",
+    "gh-pages": "^3.0.0",
     "prettier": "^2.0.5"
   }
 }
