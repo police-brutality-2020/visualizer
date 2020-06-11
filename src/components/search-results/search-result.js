@@ -17,7 +17,7 @@ function SearchResult({ id, title, city, state, date, onResultClick }) {
     >
       <h4>{title}</h4>
       <p>
-        {city}, {state} &bull; {format(new Date(date), 'LLL dd, yyyy')}
+        {city}, {state} &bull; {format(new Date(date), 'LLLL do, yyyy')}
       </p>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { format } from 'date-fns';
 
 import './video.css';
 
@@ -19,7 +20,7 @@ function Video({
         <div className="source">
           <div className="name">{name}</div>
           <div className="type">
-            {type} &bull; {date}
+            {type} &bull; {format(new Date(date), 'LLLL do, yyyy')}
           </div>
         </div>
       </a>
