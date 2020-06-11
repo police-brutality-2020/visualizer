@@ -4,42 +4,36 @@ import { FaLink, FaTwitter, FaReddit, FaFacebookF } from 'react-icons/fa';
 
 import './links.css';
 
-const getIcon = (url) => {
+const getData = (url) => {
   const link = new URL(url);
+  const domain = link.hostname.match(/[^.]+\.\w+$/);
 
-  switch (link.host) {
-    case 'twitter.com':
-      return <FaTwitter />;
-    case 'www.reddit.com':
-      return <FaReddit />;
-    case 'www.facebook.com':
-      return <FaFacebookF />;
-    default:
-      return <FaLink />;
-  }
-};
-
-const getLabel = (url) => {
-  const link = new URL(url);
-  switch (link.host) {
+  switch (domain[0]) {
     case 'twitter.com':
       // '@username'
-      return `@${link.pathname.match(/([^/]+)/)[1]}`;
-    case 'www.reddit.com':
+      return [<FaTwitter />, `@${link.pathname.match(/([^/]+)/)[1]}`];
+    case 'reddit.com':
       // 'r/subreddit'
-      return link.pathname.match(/r\/[^/]+/)[0];
+      return [<FaReddit />, link.pathname.match(/r\/[^/]+/)[0]];
+    case 'facebook.com':
+      return [<FaFacebookF />, link.hostname];
     default:
-      return link.hostname;
+      return [<FaLink />, link.hostname];
   }
 };
 
 function Links({ urls }) {
-  const elements = urls.map((url) => (
-    <a key={url} href={url} target="_blank" rel="noopener noreferrer">
-      {getIcon(url)}
-      <span>{getLabel(url)}</span>
-    </a>
-  ));
+  const elements = urls.map((url) => {
+    // Look up the icon and label for this URL
+    const [icon, label] = getData(url);
+
+    return (
+      <a key={url} href={url} target="_blank" rel="noopener noreferrer">
+        {icon}
+        <span>{label}</span>
+      </a>
+    );
+  });
 
   return <div className="links">{elements}</div>;
 }
