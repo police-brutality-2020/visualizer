@@ -33,6 +33,7 @@
   border: none;
   outline: none;
   background: none;
+  font-family: inherit;
 }
 
 .omnibox form input::placeholder {

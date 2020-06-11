@@ -27,7 +27,9 @@
 
 .result-details .header h3 {
   margin: 0;
+
   font-size: 22px;
+  font-weight: 500;
 }
 
 .result-details .header p {
