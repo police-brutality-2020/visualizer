@@ -20,7 +20,7 @@ function ResultDetails({ id, hideResultDetail }) {
           <h3>{data.title}</h3>
           <p>
             {data.city}, {data.state} &bull;{' '}
-            {format(new Date(data.date), 'LLL dd, yyyy')}
+            {format(new Date(data.date), 'LLLL do, yyyy')}
           </p>
         </div>
       </div>
