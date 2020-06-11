@@ -14,10 +14,9 @@ function Evidence({ data }) {
     return (
       <Video
         key={item.id}
-        name={video.id}
         type={video.site}
         date={video.created_at}
-        description={video.title}
+        description={video.description}
         linkUrl={video.url}
         videoUrl={stream.url}
         thumbnailUrl={video.thumbnail}

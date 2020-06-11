@@ -1,24 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
+import parseUrl from '../../util/parseUrl';
 
 import './video.css';
 
-function Video({
-  name,
-  type,
-  date,
-  description,
-  videoUrl,
-  linkUrl,
-  thumbnailUrl,
-}) {
+function Video({ type, date, description, videoUrl, linkUrl, thumbnailUrl }) {
+  const [, label] = parseUrl(linkUrl);
+
   return (
     <div className="video">
       <a href={linkUrl}>
         <img src={thumbnailUrl} alt="thumbnail" />
         <div className="source">
-          <div className="name">{name}</div>
+          <div className="label">{label}</div>
           <div className="type">
             {type} &bull; {format(new Date(date), 'LLLL do, yyyy')}
           </div>
@@ -34,7 +29,6 @@ function Video({
 }
 
 Video.propTypes = {
-  name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
