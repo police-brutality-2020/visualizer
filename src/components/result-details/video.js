@@ -10,7 +10,7 @@ function Video({ type, date, description, videoUrl, linkUrl, thumbnailUrl }) {
 
   return (
     <div className="video">
-      <a href={linkUrl}>
+      <a href={linkUrl} target="_blank" rel="noopener noreferrer">
         <img src={thumbnailUrl} alt="thumbnail" />
         <div className="source">
           <div className="label">{label}</div>
