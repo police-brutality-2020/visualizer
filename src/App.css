@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
 .app {
   display: flex;
   flex-direction: row;
+
+  font-family: 'Rubik', sans-serif;
 }

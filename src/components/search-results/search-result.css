@@ -16,7 +16,8 @@
 .search-result h4 {
   margin: 0;
 
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .search-result p {

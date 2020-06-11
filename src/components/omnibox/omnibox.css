@@ -35,6 +35,7 @@
   border: none;
   outline: none;
   background: none;
+  font-family: inherit;
   text-overflow: ellipsis;
 }
 
