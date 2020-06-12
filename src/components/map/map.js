@@ -6,7 +6,9 @@ import Analytics from '../../services/analytics';
 import getClosetCity from '../../util/closestCity';
 
 const libraries = ['visualization'];
-const googleMapsApiKey = 'AIzaSyDGPAOkljsjapYWRKo89y6McxkZ3JzwZKI';
+const googleMapsApiKey =
+  process.env.REACT_APP_GOOGLE_API_KEY ||
+  'AIzaSyDGPAOkljsjapYWRKo89y6McxkZ3JzwZKI';
 
 const containerStyle = {
   flex: '1',
