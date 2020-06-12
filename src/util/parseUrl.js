@@ -1,14 +1,14 @@
 import React from 'react';
 import {
-  FaTwitter,
-  FaReddit,
   FaFacebookF,
-  FaLink,
-  FaNewspaper,
   FaGoogle,
   FaInstagram,
-  FaYoutube,
+  FaLink,
+  FaNewspaper,
+  FaReddit,
+  FaTwitter,
   FaVideo,
+  FaYoutube,
 } from 'react-icons/fa';
 
 const parseUrl = (link) => {
@@ -23,13 +23,6 @@ const parseUrl = (link) => {
     case 'theguardian.com':
     case 'wapo.st':
       return [<FaNewspaper />, link.hostname];
-    case 'twitter.com':
-      // '@username'
-      return [<FaTwitter />, `@${link.pathname.match(/([^/]+)/)[1]}`];
-    case 'redd.it':
-    case 'reddit.com':
-      // 'r/subreddit'
-      return [<FaReddit />, link.pathname.match(/r\/[^/]+/)[0]];
     case 'fbcdn.net':
     case 'facebook.com':
       return [<FaFacebookF />, link.hostname];
@@ -38,11 +31,18 @@ const parseUrl = (link) => {
       return [<FaGoogle />, link.hostname];
     case 'instagram.com':
       return [<FaInstagram />, link.hostname];
+    case 'redd.it':
+    case 'reddit.com':
+      // 'r/subreddit'
+      return [<FaReddit />, link.pathname.match(/r\/[^/]+/)[0]];
+    case 'tiktok.com':
+      return [<FaVideo />, link.pathname.match(/@\w+/)[0]];
+    case 'twitter.com':
+      // '@username'
+      return [<FaTwitter />, `@${link.pathname.match(/([^/]+)/)[1]}`];
     case 'youtu.be':
     case 'youtube.com':
       return [<FaYoutube />, link.hostname];
-    case 'tiktok.com':
-      return [<FaVideo />, link.pathname.match(/@\w+/)[0]];
     default:
       return [<FaLink />, link.hostname];
   }
