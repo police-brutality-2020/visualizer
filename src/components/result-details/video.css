@@ -24,12 +24,13 @@
   width: 32px;
   height: 32px;
 
+  margin-right: 12px;
+
   border-radius: 16px;
 }
 
 .video a .source {
   flex: 1;
-  margin-left: 12px;
 }
 
 .video a .source .label {
