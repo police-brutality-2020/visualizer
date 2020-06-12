@@ -12,17 +12,3 @@
 .search-result:hover {
   background-color: #fafafa;
 }
-
-.search-result h4 {
-  margin: 0;
-
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.search-result p {
-  margin: 4px 0;
-
-  color: #70757a;
-  font-size: 13px;
-}

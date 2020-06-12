@@ -9,6 +9,7 @@ import './omnibox.css';
 function Omnibox({ defaultInput, onClear, onSearch }) {
   const [input, setInput] = React.useState(defaultInput);
 
+  const handleFocus = (e) => e.target.select();
   const handleChange = (e) => setInput(e.target.value);
 
   const handleSubmit = (e) => {
@@ -39,6 +40,7 @@ function Omnibox({ defaultInput, onClear, onSearch }) {
           type="text"
           value={input}
           placeholder="Search Police Brutality"
+          onFocus={handleFocus}
           onChange={handleChange}
         />
         <MdSearch className="icon" onClick={handleSubmit} />

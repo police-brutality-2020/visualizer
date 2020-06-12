@@ -3,3 +3,35 @@
 
   border-top: 1px solid #e6e6e6;
 }
+
+.search-results.empty {
+  padding: 18px 24px;
+}
+
+.search-results h4 {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.search-results p {
+  margin: 4px 0;
+
+  color: #70757a;
+  font-size: 13px;
+}
+
+.search-results p.call-to-action {
+  margin: 18px 0 0;
+}
+
+.search-results a {
+  color: #3771E0;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.search-results a:hover {
+  text-decoration: underline;
+}
