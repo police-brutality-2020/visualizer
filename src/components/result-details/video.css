@@ -24,12 +24,13 @@
   width: 32px;
   height: 32px;
 
+  margin-right: 12px;
+
   border-radius: 16px;
 }
 
 .video a .source {
   flex: 1;
-  margin-left: 12px;
 }
 
 .video a .source .label {
@@ -43,7 +44,7 @@
 }
 
 .video > p {
-  margin: 12px 0;
+  margin: 12px 0 0;
 
   color: #000000;
   font-size: 14px;
@@ -51,5 +52,7 @@
 
 .video video {
   height: 256px;
+  margin-top: 12px;
+
   object-fit: cover;
 }

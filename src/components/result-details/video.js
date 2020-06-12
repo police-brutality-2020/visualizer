@@ -8,10 +8,14 @@ import './video.css';
 function Video({ type, date, description, videoUrl, linkUrl, thumbnailUrl }) {
   const [, label] = parseUrl(linkUrl);
 
+  // When the thumbnail or video fails to load, remove the element
+  const onThumbnailError = (e) => e.target.remove();
+  const onVideoError = (e) => e.target.parentElement.remove();
+
   return (
     <div className="video">
       <a href={linkUrl} target="_blank" rel="noopener noreferrer">
-        <img src={thumbnailUrl} alt="thumbnail" />
+        <img src={thumbnailUrl} alt="thumbnail" onError={onThumbnailError} />
         <div className="source">
           <div className="label">{label}</div>
           <div className="type">
@@ -20,7 +24,7 @@ function Video({ type, date, description, videoUrl, linkUrl, thumbnailUrl }) {
         </div>
       </a>
       <p>{description}</p>
-      <video controls>
+      <video controls onError={onVideoError}>
         <source type="video/mp4" src={videoUrl} />
         <track kind="captions" />
       </video>
