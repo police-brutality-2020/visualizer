@@ -44,7 +44,7 @@
 }
 
 .video > p {
-  margin: 12px 0;
+  margin: 12px 0 0;
 
   color: #000000;
   font-size: 14px;
@@ -52,5 +52,7 @@
 
 .video video {
   height: 256px;
+  margin-top: 12px;
+
   object-fit: cover;
 }
