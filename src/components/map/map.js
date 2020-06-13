@@ -52,14 +52,15 @@ function Map({ incidents, onCityClick }) {
       },
       incidents,
     );
-    map.setZoom(8);
+
+    Analytics.event('Map', 'Clicked on a city', city.name);
+    onCityClick(city.name);
+
+    map.setZoom(7);
     map.panTo({
       lat: Number(city.coordinate.lat),
       lng: Number(city.coordinate.long),
     });
-
-    Analytics.event('Map', 'Clicked on a city', city.name);
-    onCityClick(city.name);
   }
 
   return (
