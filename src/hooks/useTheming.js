@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 /**
  * @typedef {'light'|'dark'} ThemeValues
@@ -20,8 +19,11 @@ import React, { useState, useEffect } from 'react';
  *  }
  * ```
  *
- * @returns {[ThemeValues, setTheme]} - The current color scheme and a function to
- *                                to update it.
+ * You can change the theme by calling the setTheme function with
+ * one of the possible values - 'light' or 'dark'.
+ *
+ * @returns {[ThemeValues, handleThemeChange]} - The current color scheme and a function to
+ *                                               to update it.
  */
 const useTheming = () => {
   const [theme, setTheme] = useState('light');
@@ -30,14 +32,14 @@ const useTheming = () => {
    * Checks if the system already supports the
    * prefers-color-scheme media query. If so, returns
    * the query itself.
-   * Returns null if the system doesn't support it yet.
+   * Returns 'light' otherwise.
    *
-   * @returns {(ThemeValues|null)} - The system theme.
+   * @returns {(ThemeValues)} - The system theme.
    */
   const getSystemTheme = () => {
     // If the browser doesn't support CSS media queries,
-    // returns false.
-    if (!window.matchMedia) return null;
+    // returns 'light'.
+    if (!window.matchMedia) return 'light';
 
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark';
@@ -48,19 +50,23 @@ const useTheming = () => {
 
   /**
    * Checks if a theme is saved on the local storage.
-   * This function is used as a fallback if the system theme
-   * isn't available.
+   * If no theme is set, fallbacks to the system theme.
    *
-   * @returns {(ThemeValues)} - The theme stored in the local storage.
+   * @returns {(ThemeValues)}
    */
   const getLocalStorageTheme = () => {
     const localStorageTheme = localStorage.getItem('theme');
     if (localStorageTheme) return localStorageTheme;
 
-    // Sets 'light' as the stored theme if no one
-    // is already defined.
-    localStorage.setItem('theme', 'light');
-    return 'light';
+    // If no theme is stored, use the system one.
+    return getSystemTheme();
+  };
+
+  /**
+   * @param {ThemeValues} newTheme
+   */
+  const setLocalStorageTheme = (newTheme) => {
+    localStorage.setItem('theme', newTheme);
   };
 
   /**
@@ -69,19 +75,16 @@ const useTheming = () => {
    * @param {ThemeValues} newTheme
    */
   const handleThemeChange = (newTheme) => {
-    // Sets the document data-theme attribute to the
-    // new theme. This attribute changes the CSS variables.
+    // Sets the document data-theme attribute.
+    // This attribute changes the CSS variables.
     document.documentElement.setAttribute('data-theme', newTheme);
+    setLocalStorageTheme(newTheme);
 
     setTheme(newTheme);
   };
 
   useEffect(() => {
-    let predefinedTheme = getSystemTheme();
-
-    if (!predefinedTheme) {
-      predefinedTheme = getLocalStorageTheme();
-    }
+    const predefinedTheme = getLocalStorageTheme();
 
     handleThemeChange(predefinedTheme);
   }, []);

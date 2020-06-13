@@ -14,7 +14,9 @@ function App() {
   Analytics.pageview('/');
 
   const [mapValue, setMapValue] = React.useState('');
-  const [theme, setTheme] = useTheming();
+
+  // Initialize the app theming.
+  useTheming();
 
   // Fetch the latest incidents from the backend API
   const incidents = useIncidents();
