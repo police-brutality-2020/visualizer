@@ -1,3 +1,15 @@
+:root {
+  --omnibox-background: #FFF;
+  --logo-color: #000;
+  --input-color: auto;
+}
+
+[data-theme="dark"] {  
+  --omnibox-background: #272727;
+  --logo-color: #FFF;
+  --input-color: #FFF;
+}
+
 .omnibox {
   position: absolute;
   left: 0;
@@ -9,7 +21,7 @@
   margin: 8px;
   border-radius: 8px;
 
-  background-color: #ffffff;
+  background-color: var(--omnibox-background);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
 
   z-index: 2;
@@ -31,6 +43,7 @@
 
   font-size: 15px;
   font-weight: 500;
+  color: var(--input-color);
 
   border: none;
   outline: none;
@@ -61,7 +74,7 @@
 }
 
 .omnibox form .icon.logo {
-  color: #000000;
+  color: var(--logo-color);
 }
 
 .omnibox form .divider {

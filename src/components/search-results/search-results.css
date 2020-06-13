@@ -1,6 +1,19 @@
+:root {
+  --search-results-bg-color: #FFF;
+  --result-text-color: #000;
+  --result-details-color: #70757A;
+}
+
+[data-theme="dark"] {
+  --search-results-bg-color: #1B1B1B;
+  --result-text-color: #FFF;
+  --result-details-color: #A7A7A7;
+}
+
 .search-results {
   overflow-y: auto;
-
+  
+  background-color: var(--search-results-bg-color);
   border-top: 1px solid #e6e6e6;
 }
 
@@ -10,7 +23,8 @@
 
 .search-results h4 {
   margin: 0;
-
+  
+  color: var(--result-text-color);
   font-size: 16px;
   font-weight: 500;
 }
@@ -18,7 +32,7 @@
 .search-results p {
   margin: 4px 0;
 
-  color: #70757a;
+  color: var(--result-details-color);
   font-size: 13px;
 }
 

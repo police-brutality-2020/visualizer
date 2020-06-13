@@ -1,3 +1,11 @@
+:root {
+  --icon-hover-bg: #F1F3F4;
+}
+
+[data-theme="dark"] {
+  --icon-hover-bg: #252525;
+}
+
 .links {
   display: flex;
   flex-wrap: wrap;
@@ -29,7 +37,7 @@
 }
 
 .links a:hover svg {
-  background-color: #f1f3f4;
+  background-color: var(--icon-hover-bg);
 }
 
 .links a span {

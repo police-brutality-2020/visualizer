@@ -1,3 +1,17 @@
+:root {
+  --result-title: #000;
+  --result-date: #A7A7A7;
+  --arrow-left-icon: #BBB;
+  --arrow-left-icon-hover: #000;
+}
+
+[data-theme="dark"] {
+  --result-title: #FFF;
+  --result-date: #A7A7A7;
+  --arrow-left-icon: #FFF;
+  --arrow-left-icon-hover: #A7A7A7;
+}
+
 .result-details {
   flex: 1;
   
@@ -17,17 +31,18 @@
 
   padding: 24px;
 
-  color: #bbbbbb;
+  color: var(--arrow-left-icon);
   cursor: pointer;
 }
 
 .result-details .header svg:hover {
-  color: #000000;
+  color: var(--arrow-left-icon-hover);
 }
 
 .result-details .header h3 {
   margin: 0;
 
+  color: var(--result-title);
   font-size: 22px;
   font-weight: 500;
 }
@@ -36,7 +51,7 @@
   margin: 0;
   padding-top: 8px;
 
-  color: #70757a;
+  color: var(--result-date);
   font-size: 14px;
 }
 

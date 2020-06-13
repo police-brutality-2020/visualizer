@@ -4,6 +4,7 @@ import Map from './components/map/map';
 import Sidebar from './components/sidebar/sidebar';
 import Footer from './components/footer/footer';
 import useIncidents from './hooks/getIncidents';
+import useTheming from './hooks/useTheming';
 
 import './App.css';
 
@@ -13,6 +14,9 @@ function App() {
   Analytics.pageview('/');
 
   const [mapValue, setMapValue] = React.useState('');
+
+  // Initialize the app theming.
+  useTheming();
 
   // Fetch the latest incidents from the backend API
   const incidents = useIncidents();

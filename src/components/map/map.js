@@ -4,6 +4,8 @@ import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import HeatLayer from './heat-layer';
 import Analytics from '../../services/analytics';
 import getClosetCity from '../../util/closestCity';
+import mapDarkTheme from '../../constants/mapDarkTheme.json';
+import useTheming from '../../hooks/useTheming';
 
 const libraries = ['visualization'];
 const googleMapsApiKey =
@@ -28,13 +30,13 @@ const options = {
       east: -60,
     },
   },
-  zoom: 5,
   mapTypeControl: false,
   fullscreenControl: false,
   streetViewControl: false,
 };
 
 function Map({ incidents, onCityClick }) {
+  const [theme] = useTheming();
   const [map, setMap] = React.useState(null);
 
   const onLoad = React.useCallback(function callback(mapInstance) {
@@ -64,7 +66,11 @@ function Map({ incidents, onCityClick }) {
     <LoadScript libraries={libraries} googleMapsApiKey={googleMapsApiKey}>
       <GoogleMap
         mapContainerStyle={containerStyle}
-        options={options}
+        options={{
+          options,
+          styles: theme === 'dark' ? mapDarkTheme : null,
+        }}
+        zoom={5}
         onLoad={onLoad}
         onClick={handleMapClick}
       >

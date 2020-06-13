@@ -6,10 +6,12 @@ import { FaChevronLeft } from 'react-icons/fa';
 import Evidence from './evidence';
 import Links from './links';
 import useEvidence from '../../hooks/getEvidence';
+import useTheming from '../../hooks/useTheming';
 
 import './result-details.css';
 
 function ResultDetails({ id, hideResultDetail }) {
+  const [theme] = useTheming();
   const data = useEvidence(id);
 
   return data ? (
@@ -33,7 +35,7 @@ function ResultDetails({ id, hideResultDetail }) {
     <div className="results-details-loader">
       <Loader
         type="TailSpin"
-        color="#000000"
+        color={theme === 'dark' ? '#FFF' : '#000'}
         height={50}
         width={50}
         timeout={3000}

@@ -1,3 +1,13 @@
+:root {
+  --evidence-title: #000;
+  --evidence-description: #70757A;
+}
+
+[data-theme="dark"] {
+  --evidence-title: #FFF;
+  --evidence-description: #A7A7A7;
+}
+
 .evidence {
   display: flex;
   flex-direction: column;
@@ -7,6 +17,7 @@
   margin: 24px 0 0 0;
   padding: 0 24px;
 
+  color: var(--evidence-title);
   font-size: 16px;
   font-weight: 500;
 }
@@ -15,6 +26,6 @@
   margin: 12px 0;
   padding: 0 24px;
 
-  color: #70757a;
+  color: var(--evidence-description);
   font-size: 13px;
 }
