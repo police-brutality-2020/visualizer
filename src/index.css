@@ -1,3 +1,25 @@
+:root {
+  --omnibox-background: #FFF;
+  --logo-color: #000;
+  --input-color: auto;
+  --search-results-bg-color: #FFF;
+  --search-result-onhover: #FAFAFA;
+  --panel-open-bg: var(--search-results-bg-color);
+  --result-text-color: #000;
+  caret-color: auto;
+}
+
+[data-theme="dark"] {
+  --omnibox-background: #272727;
+  --logo-color: #FFF;
+  --input-color: #FFF;
+  --search-results-bg-color: #1B1B1B;
+  --search-result-onhover: #252525;
+  --panel-open-bg: var(--search-results-bg-color);
+  --result-text-color: #FFF;
+  caret-color: #FFF;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
