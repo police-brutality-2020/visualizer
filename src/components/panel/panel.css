@@ -1,3 +1,11 @@
+:root {
+  --panel-open-bg: var(--search-results-bg-color);
+}
+
+[data-theme="dark"] {
+  --panel-open-bg: var(--search-results-bg-color);
+}
+ 
 .panel {
   display: flex;
   flex-direction: column;

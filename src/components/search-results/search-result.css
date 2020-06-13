@@ -1,3 +1,11 @@
+:root {
+  --search-result-onhover: #FAFAFA;
+}
+
+[data-theme="dark"] {
+  --search-result-onhover: #252525;
+}
+
 .search-result {
   display: flex;
   flex-direction: column;

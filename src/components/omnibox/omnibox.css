@@ -1,3 +1,15 @@
+:root {
+  --omnibox-background: #FFF;
+  --logo-color: #000;
+  --input-color: auto;
+}
+
+[data-theme="dark"] {  
+  --omnibox-background: #272727;
+  --logo-color: #FFF;
+  --input-color: #FFF;
+}
+
 .omnibox {
   position: absolute;
   left: 0;
