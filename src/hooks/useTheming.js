@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 /**
  * @typedef {'light'|'dark'} ThemeValues
@@ -54,13 +54,13 @@ const useTheming = () => {
    *
    * @returns {(ThemeValues)}
    */
-  const getLocalStorageTheme = () => {
+  const getLocalStorageTheme = useCallback(() => {
     const localStorageTheme = localStorage.getItem('theme');
     if (localStorageTheme) return localStorageTheme;
 
     // If no theme is stored, use the system one.
     return getSystemTheme();
-  };
+  }, []);
 
   /**
    * @param {ThemeValues} newTheme
@@ -74,20 +74,20 @@ const useTheming = () => {
    *
    * @param {ThemeValues} newTheme
    */
-  const handleThemeChange = (newTheme) => {
+  const handleThemeChange = useCallback((newTheme) => {
     // Sets the document data-theme attribute.
     // This attribute changes the CSS variables.
     document.documentElement.setAttribute('data-theme', newTheme);
     setLocalStorageTheme(newTheme);
 
     setTheme(newTheme);
-  };
+  }, []);
 
   useEffect(() => {
     const predefinedTheme = getLocalStorageTheme();
 
     handleThemeChange(predefinedTheme);
-  }, []);
+  }, [getLocalStorageTheme, handleThemeChange]);
 
   return [theme, handleThemeChange];
 };
