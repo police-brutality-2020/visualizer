@@ -20,7 +20,6 @@ const getClosetCity = (coordinate, results) => {
       city.coordinate = cityCoordinate;
     }
   }
-  console.log(city);
   return city;
 };
 
