@@ -7,7 +7,7 @@ const distance = (coordinateA, coordinateB) => {
 const getClosetCity = (coordinate, results) => {
   const initialDistance = distance(coordinate, results[0].geocoding);
   const city = {
-    name: results[0],
+    name: results[0].city,
     distance: initialDistance,
     coordinate: results[0].geocoding,
   };
