@@ -5,7 +5,7 @@
   width: 408px;
   height: 100vh;
 
-  background-color: #ffffff;
+  background-color: var(--panel-open-bg);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 
   z-index: 1;
