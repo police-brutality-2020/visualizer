@@ -30,7 +30,6 @@ const options = {
       east: -60,
     },
   },
-  zoom: 5,
   mapTypeControl: false,
   fullscreenControl: false,
   streetViewControl: false,
@@ -71,6 +70,7 @@ function Map({ incidents, onCityClick }) {
           options,
           styles: theme === 'dark' ? mapDarkTheme : null,
         }}
+        zoom={5}
         onLoad={onLoad}
         onClick={handleMapClick}
       >
