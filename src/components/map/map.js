@@ -41,6 +41,7 @@ function Map({ incidents, onCityClick }) {
       lat: 38,
       lng: -98,
     });
+    mapInstance.setZoom(5);
   }, []);
 
   function handleMapClick(e) {
@@ -71,7 +72,6 @@ function Map({ incidents, onCityClick }) {
           options,
           styles: theme === 'dark' ? mapDarkTheme : null,
         }}
-        zoom={5}
         onLoad={onLoad}
         onClick={handleMapClick}
       >
