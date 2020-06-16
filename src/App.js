@@ -14,7 +14,6 @@ function App() {
   Analytics.pageview('/');
 
   const [mapValue, setMapValue] = React.useState('');
-
   // Initialize the app theming.
   useTheming();
 
@@ -24,7 +23,11 @@ function App() {
 
   return (
     <div className="app">
-      <Sidebar incidents={incidents} mapValue={mapValue} />
+      <Sidebar
+        incidents={incidents}
+        mapValue={mapValue}
+        setMapValue={setMapValue}
+      />
       <Map incidents={incidents} onCityClick={setMapValue} />
       <Footer />
     </div>

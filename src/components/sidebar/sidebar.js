@@ -11,14 +11,17 @@ const fuse = new Fuse([], {
   keys: ['city', 'state', 'title'],
 });
 
-function Sidebar({ incidents, mapValue }) {
+function Sidebar({ incidents, mapValue, setMapValue }) {
   const [search, setSearch] = React.useState('');
 
   React.useEffect(() => {
     setSearch(mapValue);
   }, [mapValue]);
 
-  const handleClear = () => setSearch('');
+  const handleClear = () => {
+    setSearch('');
+    setMapValue('');
+  };
   const isOpen = !!search;
 
   // Inform the Fuse instance of the new `incidents` array
@@ -51,6 +54,7 @@ function Sidebar({ incidents, mapValue }) {
 Sidebar.propTypes = {
   incidents: PropTypes.arrayOf(PropTypes.object).isRequired,
   mapValue: PropTypes.string.isRequired,
+  setMapValue: PropTypes.func.isRequired,
 };
 
 export default Sidebar;
