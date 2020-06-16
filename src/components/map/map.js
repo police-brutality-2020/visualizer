@@ -18,10 +18,6 @@ const containerStyle = {
 };
 
 const options = {
-  center: {
-    lat: 38,
-    lng: -98,
-  },
   restriction: {
     latLngBounds: {
       north: 52,
@@ -41,6 +37,11 @@ function Map({ incidents, onCityClick }) {
 
   const onLoad = React.useCallback(function callback(mapInstance) {
     setMap(mapInstance);
+    mapInstance.setCenter({
+      lat: 38,
+      lng: -98,
+    });
+    mapInstance.setZoom(5);
   }, []);
 
   function handleMapClick(e) {
@@ -71,7 +72,6 @@ function Map({ incidents, onCityClick }) {
           options,
           styles: theme === 'dark' ? mapDarkTheme : null,
         }}
-        zoom={5}
         onLoad={onLoad}
         onClick={handleMapClick}
       >
