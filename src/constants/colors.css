@@ -1,0 +1,102 @@
+:root {
+    /* Colors */
+    --black: #000000;
+    --white: #FFFFFF;
+    --offWhitePrimary: #FAFAFA;
+    --offWhiteSecondary: #F1F3F4;
+    --charcoalPrimary: #252525;
+    --charcoalSecondary: #1B1B1B;
+    --transparentBlack: rgba(0, 0, 0, 0.2);
+    --gray: #BBBBBB;
+    --mediumGray: #70757A;
+    --lightGrayPrimary: #DDDDDD;
+    --lightGraySecondary: #E6E6E6;
+    --blue: #3771E0;
+    --silver: #A7A7A7;
+
+    /* Global */
+    caret-color: auto;
+
+    /* Footer */
+    --footerPrimary: var(--lightGraySecondary);
+
+    /* Omnibox */
+    --omniboxPrimary: var(--white);
+    --logo: var(--black);
+    --inputPrimary: auto;
+
+    /* Panel */
+    --panelOpenBackground: var(--searchResultsBackground);
+    
+    /* Result Details */
+    --resultTitle: var(--black);
+    --resultDate: var(--silver);
+    --resultDetailsDivider: var(--lightGraySecondary);
+    --arrowLeftIcon: var(--gray);
+    --arrowLeftIconHover: var(--black);
+
+    /* Result Details - Evidence */
+    --evidenceTitle: var(--black);
+    --evidenceDescription: var(--mediumGray);
+
+    /* Result Details - Links */
+    --iconHoverBackground: var(--offWhiteSecondary);
+
+    /* Search Results */
+    --searchResultHover: var(--offWhitePrimary);
+    --searchResultText: var(--black);
+    --searchResultDetailsText: var(--mediumGray);
+    --searchResultsBackground: var(--white);
+}
+
+
+[data-theme="dark"] {
+    /* Colors */
+    --black: #000000;
+    --white: #FFFFFF;
+    --offWhitePrimary: #FAFAFA;
+    --offWhiteSecondary: #F1F3F4;
+    --charcoalPrimary: #252525;
+    --charcoalSecondary: #1B1B1B;
+    --transparentBlack: rgba(0, 0, 0, 0.2);
+    --gray: #BBBBBB;
+    --mediumGray: #70757A;
+    --lightGrayPrimary: #DDDDDD;
+    --lightGraySecondary: #E6E6E6;
+    --blue: #3771E0;
+    --silver: #A7A7A7;
+    
+    /* Global */
+    caret-color: var(--white);
+
+    /* Footer */
+    --footerPrimary: var(--lightGraySecondary);
+
+    /* Omnibox */
+    --omniboxPrimary: var(--charcoalPrimary);
+    --logo: var(--white);
+    --inputPrimary: var(--white);
+    
+    /* Panel */
+    --panelOpenBackground: var(--searchResultsBackground);
+
+    /* Result Details */
+    --resultTitle: var(--white);
+    --resultDate: var(--silver);
+    --resultDetailsDivider: var(--lightGraySecondary);
+    --arrowLeftIcon: var(--white);
+    --arrowLeftIconHover: var(--silver);
+
+    /* Result Details - Evidence */
+    --evidenceTitle: var(--white);
+    --evidenceDescription: var(--silver);
+
+    /* Result Details - Links */
+    --iconHoverBackground: var(--charcoalPrimary);
+    
+    /* Search Results */
+    --searchResultHover: var(--charcoalPrimary);
+    --searchResultText: var(--white);
+    --searchResultDetailsText: var(--silver);
+    --searchResultsBackground: var(--charcoalSecondary);
+}

@@ -1,15 +1,3 @@
-:root {
-  --omnibox-background: #FFF;
-  --logo-color: #000;
-  --input-color: auto;
-}
-
-[data-theme="dark"] {  
-  --omnibox-background: #272727;
-  --logo-color: #FFF;
-  --input-color: #FFF;
-}
-
 .omnibox {
   position: absolute;
   left: 0;
@@ -21,8 +9,8 @@
   margin: 8px;
   border-radius: 8px;
 
-  background-color: var(--omnibox-background);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+  background-color: var(--omniboxPrimary);
+  box-shadow: 0 2px 4px var(--transparentBlack), 0 -1px 0px var(--transparentBlack);
 
   z-index: 2;
 }
@@ -43,7 +31,7 @@
 
   font-size: 15px;
   font-weight: 500;
-  color: var(--input-color);
+  color: var(--inputPrimary);
 
   border: none;
   outline: none;
@@ -53,7 +41,7 @@
 }
 
 .omnibox form input::placeholder {
-  color: #bbbbbb;
+  color: var(--gray);
 }
 
 .omnibox form .icon {
@@ -64,22 +52,22 @@
 
   padding: 12px 15px;
 
-  color: #bbbbbb;
+  color: var(--gray);
   cursor: pointer;
 }
 
 .omnibox form .icon:hover,
 .omnibox form .icon.active {
-  color: #3771E0;
+  color: var(--blue);
 }
 
 .omnibox form .icon.logo {
-  color: var(--logo-color);
+  color: var(--logo);
 }
 
 .omnibox form .divider {
   width: 1px;
   height: 24px;
 
-  background-color: #dddddd;
+  background-color: var(--lightGrayPrimary);
 }
