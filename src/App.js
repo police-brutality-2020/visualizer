@@ -7,6 +7,7 @@ import useIncidents from './hooks/getIncidents';
 import useTheming from './hooks/useTheming';
 
 import './App.css';
+import './constants/colors.css';
 
 function App() {
   // Start tracking pageviews/events

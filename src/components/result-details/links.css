@@ -1,11 +1,3 @@
-:root {
-  --icon-hover-bg: #F1F3F4;
-}
-
-[data-theme="dark"] {
-  --icon-hover-bg: #252525;
-}
-
 .links {
   display: flex;
   flex-wrap: wrap;
@@ -31,13 +23,13 @@
 
   padding: 8px;
 
-  color: #3771e0;
+  color: var(--blue);
   border-radius: 17px;
-  border: 1px solid #3771e0;
+  border: 1px solid var(--blue);
 }
 
 .links a:hover svg {
-  background-color: var(--icon-hover-bg);
+  background-color: var(--iconHoverBackground);
 }
 
 .links a span {
@@ -46,5 +38,5 @@
   font-size: 13px;
   font-weight: 400;
 
-  color: #3771e0;
+  color: var(--blue);
 }
